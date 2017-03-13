@@ -11,37 +11,18 @@ input: float
 output: string in the format DD°MM'SS"
 model:
 - 
-One degree is equal to 60 minutes and equal to 3600 seconds:
-1° = 60' = 3600"
-One minute is equal to 1/60 degrees:
-1' = (1/60)° = 0.01666667°
-One second is equal to 1/3600 degrees:
-1" = (1/3600)° = 2.77778e-4° = 0.000277778°
-For angle with d integer degrees m minutes and s seconds:
-d° m' s"
-The decimal degrees dd is equal to:
-dd = d + m/60 + s/3600
-Example
-Convert 30 degrees 15 minutes and 50 seconds angle to decimal degrees:
-30° 15' 50"
-The decimal degrees dd is equal to:
-dd = d + m/60 + s/3600 = 30° + 15'/60 + 50"/3600 = 30.263888889°
-
-decimal to dms
-
-d = integer(30.263888889°) = 30°
-m = integer((dd - d) × 60) = 15'
-s = (dd - d - m/60) × 3600 = 50"
+one degree = 60 minutes
+one minute = 60 seconds
 
 =end
 
+MIN_PER_DEGREE = 60
+SEC_PER_MIN = 60
+SEC_PER_DEGREE = SEC_PER_MIN * MIN_PER_DEGREE
 
 def dms(number)
-  d = number
-  m = ((number - d) * 60)
-  s = ((number - d - m) * 3600)
-
-  "%(#{format('%02d',d)}°#{format('%02d',m)}'#{format('%02d',s)}\")"
+  degrees, minute_seconds = number.divmod(1)
+  minutes, seconds = minute_seconds.divmod()
 end
 
 
