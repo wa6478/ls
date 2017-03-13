@@ -1,0 +1,45 @@
+# calculator_messages.yml
+en:
+  welcome: "Welcome to the calculator! Enter your name:"
+  name: "Hi "
+  invalid_name: "Make sure to use a valid name"
+  first_num: "What's the first number?"
+  second_num: "What's the second number?"
+  invalid_num: "Hmm... that doesn't seem to be a valid number"
+  choose: "Must choose 1, 2, 3, or 4"
+  operator: "\n
+       What operation would you like to perform?\n
+       1) Add\n
+       2) Subtract\n
+       3) Multiply\n
+       4) Divide"
+  calculating: " the two numbers..."
+  result: "the result is "
+  another: "Do you want to perform another calculation? (Y to calc again)"
+  bye: "thanks for calculating today"
+  adding: "Adding"
+  subtracting: "Subtracting"
+  multiplying: 'Multiplying'
+  dividing: "Dividing"
+es:
+  welcome: "Bienvenido a la calculadora! Escriba su nombre:"
+  name: "Hi "
+  invalid_name: "Asegúrese de utilizar un nombre válido"
+  first_num: "¿Cuál es el primer número?"
+  second_num: "¿Cuál es el segundo número?"
+  invalid_num: "Hmm ... que no parece ser un número válido"
+  choose: "Debe elegir 1, 2, 3 o 4"
+  operator: "\n
+       ¿Qué operación desea realizar?\n
+       1) Agregar\n
+       2) Restar\n
+       3) Multiplicar\n
+       4) Divide"
+  calculating: " los dos números ..."
+  result: "el resultado es "
+  another: "¿Desea realizar otro cálculo? (Y para calc otra vez)"
+  bye: "gracias por calcular hoy"
+  adding: "Añadir"
+  subtracting: "Restar"
+  multiplying: "Multiplicando"
+  dividing: "Dividiendo"
