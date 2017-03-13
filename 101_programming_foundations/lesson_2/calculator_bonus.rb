@@ -50,7 +50,7 @@ loop do
   end
 end
 
-prompt(messages('name') + "#{name}")
+prompt(messages('name') + name.to_s)
 
 loop do # main loop
   number1 = ''
@@ -90,7 +90,7 @@ loop do # main loop
     end
   end
 
-  prompt("#{operation_to_message(operator)}" + messages('calculating'))
+  prompt(operation_to_message(operator).to_s + messages('calculating'))
 
   result = case operator
            when '1'
@@ -103,7 +103,7 @@ loop do # main loop
              number1.to_f / number2.to_f
            end
 
-  prompt(messages('result') + "#{result}")
+  prompt(messages('result') + result.to_s)
 
   prompt(messages('another'))
   answer = gets.chomp
