@@ -6,23 +6,28 @@
 # Note: your results may differ slightly depending on how you round values, but should generally be within a second or two of the results shown.
 # Examples:
 
-=begin
-input: float
-output: string in the format DD°MM'SS"
-model:
-- 
-one degree = 60 minutes
-one minute = 60 seconds
 
-=end
+# input: float
+# output: string in the format DD°MM'SS"
+# model:
+# - 
+# one degree = 60 minutes
+# one minute = 60 seconds
+# algo to calc:
+# First: Subtract the whole degrees. Convert the fraction to minutes. Multiply the decimal of a degree by 60 (the number of minutes in a degree). The whole number of the answer is the whole minutes.
+# Second: Subtract the whole minutes from the answer.
+# Third: Convert the decimal number remaining (from minutes) to seconds. Multiply the decimal by 60 (the number of seconds in a minute). The whole number of the answer is the whole seconds.
 
 MIN_PER_DEGREE = 60
 SEC_PER_MIN = 60
 SEC_PER_DEGREE = SEC_PER_MIN * MIN_PER_DEGREE
 
 def dms(number)
-  degrees, minute_seconds = number.divmod(1)
-  minutes, seconds = minute_seconds.divmod()
+  degrees = number.to_i
+  minutes_f, seconds_f = ((number - degrees) * MIN_PER_DEGREE).divmod(1)
+  minutes = minutes_f.to_i
+  seconds = (seconds_f * SEC_PER_MIN).to_i
+  format("%02d°%02d'%02d\"", degrees, minutes, seconds)
 end
 
 
