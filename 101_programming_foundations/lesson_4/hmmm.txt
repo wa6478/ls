@@ -1,0 +1,21 @@
+Array#fetch tries to grab a value at a given index and if it fails to do so, throws an IndexError exception. Could be useful.
+
+This actually makes #fetch better code than [], since it enforces the boundaries of the array -- the recommendation is to use fetch instead of slice when you are trying to only grab a single value from an array
+
+do/while loop = placing the break at the last line of the loop which means the loop gets to run at least once
+while loop = placing the break condition at the beginning, which means the loop may not run at all depending on the condition
+
+Notice the block arguments below... Can either be |pair| (or whatever variable name), and represent an array of [key, value], or specifically assign those as in the second example |(key,value)|
+{ a: "ant", b: "bear", c: "cat" }.each_with_object([]) do |pair, array|
+  array << pair.last
+end
+# => ["ant", "bear", "cat"]
+
+{ a: "ant", b: "bear", c: "cat" }.each_with_object({}) do |(key, value), hash|
+  hash[value] = key
+end
+# => { "ant" => :a, "bear" => :b, "cat" => :c }
+
+Enumerable#partition
+
+feed it a boolean statement in a block, and it will split the array or hash into two based on true / false
