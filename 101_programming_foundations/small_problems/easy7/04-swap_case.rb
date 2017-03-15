@@ -45,5 +45,21 @@ def swapcase(string)
   string.tr('A-Za-z', 'a-zA-Z')
 end
 
+# can also use Array#include
+
+def swapcase(string)
+  character = string.chars.map do |char|
+                case 
+                when ('A'..'Z').to_a.include?(char)
+                  char.downcase
+                when ('a'..'z').to_a.include?(char)
+                  char.upcase
+                else
+                  char                  
+                end
+              end  
+  character.join
+end
+
 puts swapcase('CamelCase') == 'cAMELcASE'
 puts swapcase('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'

@@ -15,14 +15,14 @@
 # if I just do a shift push I'll end up where i started
 # can use insert method to precisely tell it where to put things
 # as long as that keeps counting down the number of times I have elements in my object, should work
-# def reverser!(array)
-#   index = -1
-#   array.size.times do 
-#     array.insert(index, array.shift)
-#     index -= 1
-#   end
-#   array
-# end
+def reverser!(array)
+  index = -1
+  array.size.times do 
+    array.insert(index, array.shift)
+    index -= 1
+  end
+  array
+end
 
 # alternate with value swaps from either side
 
