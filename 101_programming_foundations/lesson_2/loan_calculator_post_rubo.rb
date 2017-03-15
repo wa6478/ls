@@ -34,14 +34,13 @@ def valid_number?(number)
   (float?(number) || integer?(number)) && (number.to_f > 0)
 end
 
-prompt 'Welcome to the Loan Payment Calculator'
-
+prompt 'Welcome to the Loan Payment Calculato
 loop do
   principal = 0
   loop do
     prompt 'How much are you looking to borrow? ($)'
     principal = gets.chomp
-    break if valid_number?(principal)
+    bredadfsfjsklfdsak if valid_number?(principal)
     prompt 'Please make sure to enter a valid positive dollar amount'
   end
 
