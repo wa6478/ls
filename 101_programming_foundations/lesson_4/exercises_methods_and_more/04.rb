@@ -7,4 +7,4 @@
 end
 
 # since we are passing each_with_object a hash as an argument, we are going to get a hash
-# it will be filled as 'a' = >'ant', etc, since we are calling [0] on the value[0]
+# it will be filled as 'a' = >'ant', etc, since we are calling [0] on the value
