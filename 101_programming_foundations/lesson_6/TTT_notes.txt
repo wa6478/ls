@@ -1,0 +1,63 @@
+Tic Tac Toe
+
+=> Let's try to write out a description of the game.
+
+- Tic Tac Toe is a two player game
+- The game space is a 3 x 3 grid of squares
+- Play starts with the first player claiming a square with their mark
+- Players take alternating turns, placing their makrs
+- Player 1's mark is X, Player 2's mark is O
+- If a player creates an unbroken chain of 3 of their own marks (horizontally, vertically, or diagonally) they win
+- If the game space fills up with no win condition, it's a draw
+- Rinse, lather, repeat.
+
+=> That's a generic description, but in order to build a flow chart, we need to outline the sequence of the gameplay a little more.
+
+- Display the board
+- "Welcome etc."
+- Randomly assign the first player
+- Game play:
+  - Before each turn: win / draw condition reached?
+  - Player turn:
+    - Display latest board
+    - Display coordinate options for where to place the mark
+    - Validate that coordinate chosen is a valid location
+    - Place mark
+    - Update display board
+  - Computer turn:
+    - From valid options randomly select an available square and place mark
+- Conclusion:
+  - Declare winner / loser
+  - Again / quit?
+END
+
+- Instinct for board state is to store values in an array for column and rows
+- [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+- first level is the rows, and each object in the second level reprents a column
+- or maybe even written like this:
+- [[0, 0, 0], 
+   [0, 0, 0], 
+   [0, 0, 0]]
+- so something changing in the middle of the board would be
+- [[0, 0, 0], 
+   [0, 1, 0], 
+   [0, 0, 0]]
+
+- and if I wanted to print the board could just iterate over the array for my output
+- can use 1 and 2 to signify the different players moves, or maybe the strings "X" and "O" directly
+
+
+==> from instructions:
+1. Display the initial empty 3x3 board.
+2. Ask the user to mark a square.
+3. Computer marks a square.
+4. Display the updated board state.
+5. If winner, display winner.
+6. If board is full, display tie.
+7. If neither winner nor board is full, go to #2
+8. Play again?
+9. If yes, go to #1
+10. Good bye!
+
+
+
