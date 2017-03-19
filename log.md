@@ -1,7 +1,17 @@
 # Log
 
-### 2017-03-18
+### 2017-03-19
 
+Possible to introduce additional block variables and assign them within the block:
+
+```
+(1..10).each { |num, new_var| # => althought new_var will default to nil, interesting that this is possible.
+```
+
+**Push for simplicity**
+When I get stuck in problems it tends to be that I've got some elegant notion in my head and struggling to translate it, or even be clear on what exactly I'm trying to do. Better to approach the problem with a very simple mindset.
+
+### 2017-03-18
 
 ### 109 Assessment Notes
 
