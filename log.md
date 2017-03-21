@@ -45,18 +45,40 @@ But since Ruby is actually pass by reference value, I have to give the actual ad
 
 #### working with collections (Array, Hash, String), and popular collection methods (each, map, select, etc). Study these methods carefully.
 
+
 `Array#each`, `Hash#each`
 - what it does: invokes the given block for each element (or key/value pair in case of a hash)
 - what it returns: the calling object (whether hash or array)
 
+Documentation:
+
+> `Array#each` : Calls the given block once for each element in self, passing that element as a parameter. Returns the array itself.
+
+> `Hash#each` : Calls block once for each key in hsh, passing the key-value pair as parameters.
+
+
 `Array#map`, `Enumerable#map`
 - what it does: invokes the given block for each element (or key/value pair in case of a hash)
-- what it returns: a new array with the values returned by the block
+- what it returns: a new array with the block's return values
+
+Documentation:
+
+> `Array#map` : Invokes the given block once for each element of self. Creates a new array containing the values returned by the block.
+> `Enumerable#map` : Returns a new array with the results of running block once for every element in enum.
+
 
 `Array#select`, `Hash#select`, `Enumerable#select`
 - what it does: invokes the given block for each element (or key/value pair in case of a hash)
 - what it returns: a new collection (hash or array) consisting of entries or elements for which the block returned true
 *`reject` works the same way except returns a new collection where the block returned false
+
+Documentation:
+
+> `Array#select` Returns a new array containing all elements of ary for which the given block returns a true value.
+
+> `Hash#select` Returns a new hash consisting of entries for which the block returns true.
+
+> `Enumerable#select` Returns an array containing all elements of enum for which the given block returns a true value.
 
 #### variables as pointers
 
@@ -84,7 +106,7 @@ But since Ruby is actually pass by reference value, I have to give the actual ad
 - the implict return value of methods and blocks is the last evaluated expression within the method or block
 - so if there is a `puts` sitting at the end of your method or block, it's going to return `nil`, since that is the return value of `puts`
 
-###Misc notes
+### Misc notes
 
 **Know your tools**
 - better know a few methods and classes really well and know how to use them than to know a ton of different methods
