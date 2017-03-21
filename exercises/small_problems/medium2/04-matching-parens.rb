@@ -8,6 +8,7 @@
 
 def balanced?(string)
   open_counter = 0
+  
   string.chars.each do |char|
     return false if open_counter < 0
 
