@@ -1,5 +1,68 @@
 # Log
 
+### 2017-03-22
+
+#### Regex
+
+Don't begin solving until you know exactly what problem you are solving.
+
+Regex metacharacters are not the same inside and outside of a character class.
+
+Inside only: `^ \ - [ ]` are metacharacters.
+Outside of character classes: `$ ^ * + ? . ( ) [ ] { } | \ /`
+`\n` new line
+`\r` carriage return
+`\t` tab
+
+To be on the safe side, you can escape all special characters, even if you don't have to
+
+match([^x]) still returns a value that is true as long as 'x' is anywhere in the string, even though you are negating it for regex matching purposes
+
+**character class shortcuts**
+`.` any char (this is a shortcut for a character class and can't be used inside another character class)
+`\s` whitespace chars (can be used as an additional group inside char class)
+`\S` non-whitespace chars (can be used as an additional group inside char class)
+`\d` any decimal (0-9)
+`\D` any character *but* a decimal
+`\h` any hexidecimal digit (0-9a-fA-F) **ruby only**
+`\H` any character *but* hexidecimal digit (0-9a-fA-F) **ruby only**
+`\w` any 'word' character: A-Z, a-z, 0-9, '_' < underscore
+`\W` any non-'word' characters
+
+Outside of char classes:
+`^` beginning of line
+`$` end of line
+Note: `^` and `$` respect `\n` as beginnings of new lines
+
+`\A` beginning of string
+`\z` end of string
+(less commonly used `\Z` goes up to but not including \n at the end of string)
+
+`\b` word boundary
+
+**Quantifiers**
+`*` zero or more instances of the pattern directly to the left of this quantifier (or the pattern in parentheses directly to the left of this quantifier)
+`+` one or more instances of the pattern directly to the left of this quantifier
+`?` one or no instance of the pattern directly to the left
+`{m}` range quantifier, that matches `m` instances of the pattern directly to the left
+`{m,}` for `m` or more occurrences
+`{m,n}` more than `m` but not more than `n` occurrences
+
+Note: quantifiers are greedy, they will always match as many characters as they can
+
+`*?` force a *lazy* match instead of a greedy one
+
+Ruby string matching: `String#scan` method is a global form of `match` that returns an Array of all matching substrings.
+
+`String#match`  Determine if regex matches a string
+`string =~ regex` Determine if regex matches a string
+`String#split`  Split string by regex
+`String#sub`  Replace regex match one time
+`String#gsub` Replace regex match globally
+
+
+
+
 ### 2017-03-19
 
 Possible to introduce additional block variables and assign them within the block:
