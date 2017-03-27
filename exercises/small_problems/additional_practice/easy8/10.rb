@@ -1,0 +1,23 @@
+# Convert number to reversed array of digits
+
+# Write a method that takes a positive integer as an argument and returns that number with its digits reversed. Examples:
+
+# - in: integer
+#   - assuming that my input will not be blank
+# - out: integer, in the reverse order of the input
+#   - drop leading zeroes
+  
+# - algo
+#   - convert integer to a string
+#   - reverse that string
+#   - convert the reverse string to an integer
+
+def reversed_number(num)
+  num.to_s.reverse.to_i
+end
+
+puts reversed_number(12345) == 54321
+puts reversed_number(12213) == 31221
+puts reversed_number(456) == 654
+puts reversed_number(12000) == 21 # Note that zeros get dropped!
+puts reversed_number(1) == 1
