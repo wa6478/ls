@@ -1,5 +1,23 @@
 # Log
 
+### 2017-03-24
+
+- can use #{} to call a block variable to regex
+
+### 2017-03-23
+
+`slice` creates a new object.
+
+Reduce is an enumerable method. Which means it iterates. Keep that in mind.
+
+`reduce(initial) { |memo, obj| block }`
+memo is equal to initial if supplied, else first element of collection
+
+`reduce` is actually kind of like `with_object` because you can supply it an empty string as long as you are adding strings to it
+
+upto, times - etc. loop or iterator?
+what are && || called?
+
 ### 2017-03-22
 
 Don't begin solving until you know exactly what problem you are solving. Properly list out all of the requirements of the problem, and your algorithm to specifically address those requirements.
