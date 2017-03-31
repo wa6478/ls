@@ -1,5 +1,25 @@
 # Log
 
+### 2017-03-31
+
+- Changing text editors to remove trailing whitespace by default makes Rubocop happy
+
+- Think of whether a noun is its own class, or a state that an object of an existing class would have
+- modules for 'has-a' relationship ("`Car` has `Drivable` behaviors")
+- parent class for 'is-a' relationship ("`Car` is a type of `Vehicle`")
+- Modules can be used for namespacing (grouping common classes together) or grouping common methods together
+- Modules can't be instantiated (they can't create objects of their own)
+- "The method lookup path traverses the inheritance hierarchy"
+
+**Receivers and Private/Protected/Public Methods**
+- Calling a method on `self` is calling the method with an explicit receiver
+- Same as calling a method on a specific object
+- Private methods can only be called implicitly, i.e. without an explicit receiver
+- Looks like private makes an exception for explicit receivers if its for a setter method using `self` to disambiguate itself from a local variable (a setter method *must* be used with self)
+- Protected methods can only be called explicitly within the class's instance methods (but can also be called implicitly, like private methods)
+  - Useful for comparing two objects of the same class within an instance method
+- Public methods can be called explicitly from anywhere (inside or outside of the class), or implicitly from inside class instance methods
+
 ### 2017-03-24
 
 - can use #{} to call a block variable to regex
