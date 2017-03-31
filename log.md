@@ -2,6 +2,21 @@
 
 ### 2017-03-31
 
+- For object oriented programming review, review exercises 120 - medium1 5-10
+
+**Sublime Text Shortcuts**
+- `cmd + ctrl + G` edit all instances of word at cursor
+- `cmd + opt + G` go to the next instance of word at cursor
+- `cmd + D` select word at cursor
+- `cmd + P` to bring up search bar 
+  - can search file names and paths by default
+  - `@` methods and classes 
+  - `#` variable names
+  - `:` goto row
+- `cmd + opt + 2` create split window (can create 3 with `+ 3`, etc.)
+- `ctrl + 1` or `2` etc. to switch between split windows
+
+
 - Changing text editors to remove trailing whitespace by default makes Rubocop happy
 
 - Think of whether a noun is its own class, or a state that an object of an existing class would have
