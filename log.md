@@ -2,15 +2,39 @@
 
 ### 2017-03-31
 
+- A closure is a "chunk of code" that has references to the artifacts that surround it -- its **binding**.
+- Blocks are just another parameter passed in as an argument to a method at method invocation
+- In Ruby, every method can take an optional block as an implicit parameter
+- Method implementation is where you define a method
+- Method invocation is when you call it
+- The rules around enforcing the number of arguments you can call on a closure in Ruby is called its arity.
+- In Ruby, blocks have *lenient* arity rules, which is why it doesn't complain when you pass in different number of arguments
+
+Some terminology:
+- block local variable
+- block return value
+- yield execution to the block
+- invoke or call the block
+
+**When to use blocks**
+- You want to defer some implementation code to the method invocation decision
+- Sandwich code - where we have a `before` then `some code` followed by an `after` -- `some code` is a great spot to yield to a block
+- There are many useful use cases for "sandwich code". Timing, logging, notification systems are all examples where before/after actions are important.
+
+- Defining blocks explicitly in a method (e.g. `def test(&block)`) can be nice if you want to be able to pass around the block to other methods within your method
+- You can `yield` to such blocks or call `call` on the block (`block.call`)
+
+-----
+
 - For object oriented programming review, review exercises 120 - medium1 5-10
 
 **Sublime Text Shortcuts**
 - `cmd + ctrl + G` edit all instances of word at cursor
 - `cmd + opt + G` go to the next instance of word at cursor
 - `cmd + D` select word at cursor
-- `cmd + P` to bring up search bar 
+- `cmd + P` to bring up search bar
   - can search file names and paths by default
-  - `@` methods and classes 
+  - `@` methods and classes
   - `#` variable names
   - `:` goto row
 - `cmd + opt + 2` create split window (can create 3 with `+ 3`, etc.)
@@ -149,7 +173,7 @@ When an immutable object is passed into a method, try as it might, the method ca
 
 However, when we pass in a mutable object and mutate it (or objects pointed at from within a collection), Ruby appears to be pass by reference, that is we are passing a reference to the original object to the method to do with it as it pleases.
 
-As an analogy, I like to think of the object passed to the method as a physical book. 
+As an analogy, I like to think of the object passed to the method as a physical book.
 
 When I pass the method the address of where I keep the book, it's like saying, here is where it is, do with it as you please. The method then can go look at it and make its own copies of it, or it can go write in it, modify it, or tear it up. This is the equivalent of pass by reference.
 
@@ -237,7 +261,7 @@ As long as you write the block that way, `Enumerable#sort` can do what Enumerabl
 
 e.g.
 ```
-hash.sort do |(k1,v1), (k2,v2)| 
+hash.sort do |(k1,v1), (k2,v2)|
   k2.to_s.length <=> k1.to_s.length
 end
 
@@ -277,7 +301,7 @@ https://launchschool.com/blog/mutating-and-non-mutating-methods
 **How to say things**
 ```
 def some_method(input)
-  input += " hi" # reassignment # input = input + " hi" 
+  input += " hi" # reassignment # input = input + " hi"
   input + " hi"  # (+() concatenation method call not destructive)
   input << " hi" # shovel operator concatenation (destructive)
 end
