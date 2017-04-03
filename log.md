@@ -1,5 +1,14 @@
 # Log
 
+### 2017-04-03
+- Array to arguements conversion:
+https://ruby-doc.org/core-2.0.0/doc/syntax/calling_methods_rdoc.html#label-Array+to+Arguments+Conversion
+
+### 2017-04-01
+
+- Encapsulation: You don't want the user of a class to have to speculate about the internal state of a class.
+- Therefore, hide implementation details so you can mitigate ripple effects if there are changes to the class
+
 ### 2017-03-31
 
 - A closure is a "chunk of code" that has references to the artifacts that surround it -- its **binding**.
