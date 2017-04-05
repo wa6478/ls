@@ -1,8 +1,34 @@
 # Log
 
+### 2017-04-04
+- `String#scan` is a very powerful to return an array of words that match a given regex expression
+
 ### 2017-04-03
-- Array to arguements conversion:
+
+- Do the medium exercises again
+- Weekly challenges
+- Feedback submission
+- Build 21 program again
+- `StringIO` lets us simulate a `Kernel#gets`
+
+- Array to arguments conversion:
 https://ruby-doc.org/core-2.0.0/doc/syntax/calling_methods_rdoc.html#label-Array+to+Arguments+Conversion
+
+**Closures**
+- trying to return from an implicit block or externally defined proc will throw an error
+- (this is because code execution jumps to the top level where the proc or implicit block is)
+- trying to return from an internally defined proc or block will exit the method
+- trying to return from a lambda (whether internally or externally defined) always returns control to the calling method
+- a lone `&` applied to an object causes Ruby to try and convert the object into a block
+- `&:to_s` is called a "symbol to proc" operation, but it should really be called a "symbol to block operation" because `to_proc` is called on the symbol (if it's not a proc alraedy), then `&` converts it into a block
+
+**Enumerators**
+- Easiest way to create a new Enumerator object is to call `to_enum` on a collection
+- When you call an internal iterator on a collection without attaching a block, it is equivalent to calling #to_enum on the collection. (but discouraged per the documentation)
+- `array.each == array.to_enum`
+- https://chickenriceplatter.github.io/blog/2013/04/07/internal-vs-external-iterators/
+- Internal iterators will traverse in a linear fashion, and as such are often useful but inflexible
+- Creating an external iterator via Enumerator is a little more setup, but gives you more flexibility over how you iterate
 
 ### 2017-04-01
 

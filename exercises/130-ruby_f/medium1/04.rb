@@ -9,5 +9,5 @@ def assigner(array)
 end
 
 assigner(%w[raven finch hawk eagle]) do |_,_,*birds_of_prey|
-  puts "The #{birds_of_prey} are birds of prey"
+  puts "The #{birds_of_prey.join(' and ')} are birds of prey"
 end
