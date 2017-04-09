@@ -1,5 +1,87 @@
 # Log
 
+**"Slow is Smooth, Smooth is Fast"**
+### 2017-04-07
+- Remember you can't build ranges in reverse...
+
+### 2017-04-06
+- More review of OOP
+
+### 2017-04-05
+**120 - Object Oriented Programming**
+
+- classes and objects
+- using attr_* to automatically create setter and/or getter methods, and how to call them
+  - attr_accessor - create both a getter and a setter
+  - attr_reader - create a getter
+  - attr_writer - create a setter
+  - getters can be called by their method name, whereas setters need to be called with `self` to disambiguate them from local variables
+- instance methods vs class methods
+  - class methods are called on the class `Class.class_method` whereas instance methods are called on an instance of a class `Class.new.class_method` (where `Class.new` creates a new instance of `Class`).
+  - class methods are created at the same level as instance methods, but are prepended with `self` (e.g. `def self.class_method`).
+  - class methods don't have access to instance methods or instance variables.
+  - class methods do have access to class variables
+  - class methods can instantiate new objects of their own class on which they can call instance methods
+  - instance methods are the behaviors of an instantiated object of a class
+  - instance variables are the state of such an object
+  - instance method scope is at the object level
+  - uninitialized instance variables return nil
+  - class variables can be accessed and modified by both class and instance methods
+- referencing and setting an instance variable vs using getter/setter methods
+  - instance variables can be directly manipulated by calling the instance variable (e.g. `@instance_variable`, or `@instance_variable =`)
+  - getters and setters, if named `instance_variable` and `instance_variable=`, can be invoked as `instance_variable` for the getter, and `self.instance_variable` for the setter
+    - the reason the setter has to be called on `self` is that otherwise a statement like `instance_variable = 5` will be interpreted as the creation of a new local variable called `instance_variable` that's being assigned to five, rather than the instance_variable
+- class inheritance
+  - classes inherit all the methods of their superclass
+  - they can overwrite super/parent class methods by using the same name
+  - they can pass parts or all of the arguments up to the superclass using `super`
+- modules
+  - used for namespacing and mixing in methods into classes ("mixins")
+  - cannot be instantiated (i.e. can't create an object from a module)
+  - modules can contain methods and classes
+  - in order to use them, they can be made available with `include`
+- method lookup path
+  - methods are first looked up in the calling class
+  - then in the calling class's included modules (starting with the one listed last first)
+  - then up to their parent class, following the same process, all the way up to Object > Kernel > BasicObject
+- self
+  - used to reference the calling object
+  - when used in an instance method, the calling object will be an instance of a class
+  - when used in a class method, the calling object will be the class itself
+- calling methods with self
+  - mostly used with setter methods in order to disambiguate them from setting a local variable
+  - with the exception of the specific case mentioned above re: setter methods, this can't be used with private methods, as they will read using `self` like an external call to the private instance method
+- more about self
+- being able to read OO code
+  - encapsulation is about hiding functionality and making it unavailable to the rest of the code base. It's a form of data protection, making it difficult to change code without obvious intention. It is what defines boundaries in your application.
+  - objects allow the programmer to think at a new level of abstraction
+- fake operators
+  - fake operators are actually methods that can be redefined to create useful behaviors for one's classes
+  - examples of fake operators are `<<`, `+`, `/`, `[]`, `[]=`, `<=>`, `==` etc.
+  - they are actually methods invoked as `object.<<(argument)`, but ruby's syntactical sugar makes them appear as if they were operators
+  - what isn't a fake operator actually appears to be the shorter list:
+  - `&&` `||` (logical "and" "or"), `..` `...` range operators, ternary `? :`, assignment and block delimiters `=` `+=` `{`
+- truthiness
+  - everything that isn't `false` or `nil` is truthy
+  - so for the purposes of logical operation or conditional evaluation, if something is truthy, it will evaluate to `true`
+  - truthy `!=` `true`, but for the purposes of evaluation, truthy seems to behave that way
+  - don't use assignment with a conditional -- unclear whether you are purposefully trying to perform assignment or have a syntax error with `==` equality comparison
+- working with collaborator objects
+  - collaborator objects are created when there are certain behaviors and states that are better abstracted in their own objects
+  - they allow you to modularize the problem domain into cohesive pieces
+  - for example, a card class could provide very useful collaborator objects to a deck class, where a deck could shuffle card objects instead of having to keep track of the states and behaviors of the cards itself
+
+**130 - Ruby Foundations: More Topics**
+
+- how blocks work, and when we'd want to use them
+  - blocks are one way to implement ruby closures
+  - has lenient arity, won't complain about number of args passed
+  - When to use blocks:
+  - When you want to leave some of the implementation decisions to method invocation time
+  - When you have sandwich code, where there is something you do before and after some code runs (like a block). An example of this is opening a file, passing the file to the block, and then closing the file.
+- how to implement your own each, select, reduce, and map in a custom collection-oriented class
+- method invocation is when you call the method, method implementation is where you define the method
+
 ### 2017-04-04
 - `String#scan` is a very powerful to return an array of words that match a given regex expression
 
