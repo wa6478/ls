@@ -1,6 +1,42 @@
 # Log
 
 **"Slow is Smooth, Smooth is Fast"**
+
+### 2017-04-11
+Constant Resolution
+https://cirw.in/blog/constant-lookup.html
+
+Web Dev material, wumpus?, challenges?
+
+### 2017-04-10
+https://robots.thoughtbot.com/back-to-basics-polymorphism-and-ruby
+https://devblast.com/b/ruby-inheritance-encapsulation-polymorphism
+
+
+### 2017-04-09
+**Fake Operators**
+
+Method	Operator	Description
+yes	[], []=	Collection element getter and setter.
+yes	**	Exponential operator
+yes	!, ~, +, -	Not, complement, unary plus and minus (method names for the last two are +@ and -@)
+yes	*, /, %	Multiply, divide, and modulo
+yes	+, -	Plus, minus
+yes	>>, <<	Right and left shift
+yes	&	Bitwise "and"
+yes	^, |	Bitwise inclusive "or" and regular "or"
+yes	<=, <, >, >=	Less than/equal to, less than, greater than, greater than/equal to
+yes	<=>, ==, ===, !=, =~, !~	Equality and pattern matching (!= and !~ cannot be directly defined)
+no	&&	Logical "and"
+no	||	Logical "or"
+no	.., ...	Inclusive range, exclusive range
+no	? :	Ternary if-then-else
+no	=, %=, /=, -=, +=, |=, &=, >>=, <<=, *=, &&=, ||=, **=, {	Assignment (and shortcuts) and block delimiter
+
+
+**Misc**
+- Can do 1 or 2 challenges or code problems as ongoing practice with other course work
+
 ### 2017-04-07
 - Remember you can't build ranges in reverse...
 
