@@ -2,6 +2,60 @@
 
 **"Slow is Smooth, Smooth is Fast"**
 
+### 2017-04-20
+- Is using POST as the HTTP method for a request more secure than GET? Why or why not?
+
+No. Both transmit the request in plain text. GET transmits it as part of the path, POST as part of the body, but it's still in plaintext.
+
+- How can a web application be secured so that any data being sent between the client and server can not be viewed by other parties?
+
+The application has to be configured to use the `https` protocol, which encrypts communication between the client and the server.
+
+### 2017-04-13
+https://launchschool.com/blog/growing-your-own-web-framework-with-rack-part-1
+
+"The existence of a Gemfile implies that we’ll use Bundler to handle dependencies in our application."
+
+""
+- Rack is a web server interface, which gives back-end application developers a stable communication protocol between application code and web servers. 
+- Rack is a specification for connecting our application code to the web server, and also our application to the client. 
+- It sets and allow us to utilize a standardized methodology for communicating HTTP requests and responses between the client and the server. 
+- To accommodate this standard, Rack has some very specific conventions in place.
+
+"And there you have it, we now have all the requirements for our Rack application. 
+- We have a configuration file that tells the server what to run (the `config.ru` file).
+- We also have the application itself, the HelloWorld class in the `hello_world.rb` file. 
+- We know it is a Rack application because it has 
+  - the method `call(env)`, and that method **returns** 
+    - a 3 element array containing the exact information needed for a proper Rack application: 
+      - a status code (string), 
+      - headers (hash), 
+      - and a response body (responds to `each`)."
+
+"Note that Rack doesn’t come with its own server, but it’s smart enough to automatically try to use a sever that’s already installed on your machine. If you didn’t install any server, like Puma or Thin, then Rack will just use the default server that comes with Ruby, Webrick."
+
+HTTP
+
+**What are the required components of an HTTP request? What are the additional optional components?**
+- Required: 
+  - Method (e.g. GET), 
+  - Path (where you want to go on the host)
+- Optional:
+  - Parameters (query started with reserved char ? and delimited with &)
+  - Headers
+  - Body
+
+**What are the required components of an HTTP response? What are the additional optional components?**
+- Required:
+  - Status (200 OK, 302 Redirect, 404 Page not found, 500 generic server error, etc.)
+- Optional:
+  - Headers: (content-type, tell the client what's being sent back)
+  - Body: the data
+
+**What determines whether a request should use GET or POST as its HTTP method?**
+- GET is to retrieve content from the server
+- POST is to change values that are stored on the server
+
 ### 2017-04-11
 Constant Resolution
 https://cirw.in/blog/constant-lookup.html
