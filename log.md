@@ -3,6 +3,10 @@
 **"Slow is Smooth, Smooth is Fast"**
 
 ### 2017-04-20
+Seems like in general, thinking about your data structure and how it's going to fit in your application is really important. Refactoring the todo application is making me realize just how much of a pain it is to mentally keep track of the different ways to track states when you are mixing arrays and hashes (do I need the index number? Do I need a particular key?).
+
+So having clarity on that just seems extremely important. And in general, it seems useful to use hashes over arrays for larger datasets because trying to keep track of indexes becomes more difficult, especially when you can have javascript able to manipulate elements in the DOM, which then causes the routing to go goofy. Better to just have explicit keys for this data.
+
 - Is using POST as the HTTP method for a request more secure than GET? Why or why not?
 
 No. Both transmit the request in plain text. GET transmits it as part of the path, POST as part of the body, but it's still in plaintext.

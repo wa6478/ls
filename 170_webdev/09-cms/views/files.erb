@@ -1,0 +1,24 @@
+<ul>
+  <% @files.each do |file| %>
+    <li>
+      <a href="<%= file %>"><%= file %></a>
+      <a href="<%= file %>/edit">edit</a>
+      <form class="inline" method="post" action="<%= file %>/delete">
+        <button type="submit">delete</button>
+      </form>
+      <form class="inline" method="post" action="<%= file %>/duplicate">
+        <button type="submit">duplicate</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
+<p><a href="/new">New Document</a></p>
+<% if @user %>
+  <div class="user">Signed in as <%= @user %>.
+    <form class="inline" method="post" action="/signout">
+      <button type="submit">Sign out</button>
+    </form>
+  </div>
+<% else %>
+  <a class="user" href="/signin">Sign in</a>
+<% end %>
