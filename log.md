@@ -15,6 +15,18 @@ Thoughts on developing Hunt the Wumpus web app:
 - The CSS portion took quite a while, mostly due to my lack of familiarity
 - Getting practice on little housekeeping tasks like working with git, heroku, bundle, etc. is helping me feel a little more fluent in my workflow
 
+Things I would do differently next time:
+- Try to make the program more modular
+  - For example, rather than having lots of nested logic in various methods as things resolve, update the board state
+    - That way, every time there is a `get '/dungeon'`, it would just interrogate the board state to see if any game ending conditions have been met, rather than having a bunch of if logic to test if the wumpus moved, and then checking if he moved if he's in the same place as the player
+    - Instead, this would just check if a game ending condition exists (e.g. wumpus is in the same location as the player) and then set the :game_over session to be the message for that condition
+    - Then if that happens, have a redirect to `/game_over` that can then read the session and access by index a hash that has the ending messages (perhaps stored in a yaml file even for easy maintenance?)
+- also would move the classes into their own files to `require`
+- and for one off methods that we need to resolve game logic (say firing an arrow), wrapping those methods up in a module that can just be included, rather than having them cluttering up my routing logic
+- also by making things more modular, might perhaps enable me to expand the game and make it more interesting
+- perhaps add mushrooms to the dungeon that the wumpus seeks out giving it a reason to move around, and if it eats all the mushrooms it can find, perhaps being aggressive about seeking out the player
+- this would all be easier to do if game ending logic and states of objects were a little more clearly delinated than I have it in my current iteration (not sure exactly what that would look like, but it would probably come with a bit more confidence around how I can manipulate objects)
+
 Next I'm going to try to build one more application with user sessions, and more File IO type stuff since I definitely still sense a bit of confusion for me with those concepts.
 
 ### 2017-04-20
