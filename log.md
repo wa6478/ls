@@ -2,6 +2,21 @@
 
 **"Slow is Smooth, Smooth is Fast"**
 
+### 2017-04-30
+
+Thoughts on developing Hunt the Wumpus web app:
+- Developing the base game actually did not take much time
+- Getting it to work as a web app and writing a test suite were relatively much more challenging
+- Was useful in getting a better idea of how to write tests and working with sessions
+- Games actually have a lot of possible scenarios to test (especially with things that have a chance of happening), so it seems like there is a better way to think about these tests than the way I did them
+- Wrote almost all of the tests after the game, but now see the value in doing this much earlier on
+- This would have probably saved me time overall, as I would be able to quickly see if the changes I'm making are breaking any expected functionality
+- However, I was reluctant early on because part of what I was doing was still figuring out how I wanted to do things in the first place -- but even so, making the writing and rewriting of tests more second nature seems like a more robust way to develop 
+- The CSS portion took quite a while, mostly due to my lack of familiarity
+- Getting practice on little housekeeping tasks like working with git, heroku, bundle, etc. is helping me feel a little more fluent in my workflow
+
+Next I'm going to try to build one more application with user sessions, and more File IO type stuff since I definitely still sense a bit of confusion for me with those concepts.
+
 ### 2017-04-20
 Seems like in general, thinking about your data structure and how it's going to fit in your application is really important. Refactoring the todo application is making me realize just how much of a pain it is to mentally keep track of the different ways to track states when you are mixing arrays and hashes (do I need the index number? Do I need a particular key?).
 
