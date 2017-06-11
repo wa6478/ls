@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // How Big is the Room
+    var type = prompt('Meters or Feet');
+    var length = parseInt(prompt('Enter length of room'),10);
+    var width = parseInt(prompt('Enter width of room'), 10);
+    var area = length * width;
+    var sqMeterArea;
+    var sqFeetArea;
+
+    if (type.toLowerCase() === 'meters') {
+      sqMeterArea = area;
+      sqFeetArea = area * 10.7369;
+      areaPrinter(sqMeterArea, sqFeetArea);
+    } else {
+      sqFeetArea = area;
+      sqMeterArea = area / 10.7369;
+      areaPrinter(sqFeetArea, sqMeterArea);
+    }
+
+    function areaPrinter(area1, area2) {
+      if (area1 < area2) {
+        console.log('The area of the room is ' + area1.toFixed(2) + 
+          ' square meters (' + area2.toFixed(2) + ' square feet).');
+      } else {
+        console.log('The area of the room is ' + area1.toFixed(2) + 
+          ' square feet (' + area2.toFixed(2) + ' square meters).');
+      }
+    }
+    
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

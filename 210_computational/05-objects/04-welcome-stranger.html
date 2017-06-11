@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    function greetings(person, attributes) {
+      var name = '';
+      for (var i = 0; i < person.length; i++) {
+        if (i === 0) {
+          name += person[i];
+        } else {
+          name += ' ' + person[i];
+        }
+      }
+
+      return 'Hello, ' + name + '! Nice to have a ' + attributes['title'] + ' ' + attributes['occupation'] + ' around.';
+    }
+
+    console.log(greetings(['John', 'Q', 'Doe'], { title: 'Master', occupation: 'Plumber' }));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

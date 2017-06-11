@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Positioning</title>
+    <style>
+      #positioned {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        z-index: 2;
+        background: cadetblue;
+        box-sizing: border-box;
+        padding: 20px;
+        width: 400px;
+        margin-left: -200px;
+      }
+
+      #fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, .6);
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #buddy {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        background: #fcfc99;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor massa non quam condimentum pellentesque sit amet in purus. Sed id consequat erat, id blandit tortor. Aliquam orci ex, scelerisque at convallis eget, lobortis ac lectus. Pellentesque nisi metus, finibus non ex eget, auctor vehicula magna. Phasellus pulvinar, est eu lobortis aliquet, libero dolor euismod purus, eget eleifend arcu nunc hendrerit turpis. Phasellus interdum vel augue eget rutrum. Quisque mollis ipsum eu felis egestas, vel vulputate leo tincidunt. Proin sollicitudin metus non nisl ornare volutpat. Fusce ultricies, est id ultrices aliquam, dui magna gravida ligula, et pellentesque nibh metus a sapien. Mauris metus elit, dignissim vitae enim id, pharetra convallis erat. Nulla euismod sit amet ante ut elementum. Nullam non felis libero. Donec eget dui felis.</p>
+
+    <p>Curabitur nec metus id eros viverra pharetra at ac mauris. Cras et libero quis nunc ornare finibus condimentum id arcu. Fusce eu massa non purus feugiat pellentesque id quis diam. Donec tincidunt lectus at interdum viverra. Vivamus quis est id felis hendrerit elementum. Fusce rutrum cursus tincidunt. Maecenas lacinia id lectus ac viverra. Nam risus mauris, blandit id luctus ac, condimentum tempor velit. Nunc elit augue, efficitur a libero nec, interdum tincidunt leo. Pellentesque id metus ut nisl interdum ultricies eu sit amet est. Praesent sollicitudin lacus nibh, ac euismod eros convallis sed.</p>
+
+    <p>Nulla gravida id dui nec ornare. Maecenas imperdiet lorem eget eros euismod vulputate. Donec ac auctor lectus. Suspendisse tincidunt rhoncus eros vel vehicula. Cras nec molestie justo. In euismod dolor sed dictum lacinia. Donec est felis, commodo eu ante consectetur, fringilla scelerisque massa. In a viverra purus, quis viverra augue. Morbi tristique sollicitudin nibh, non mattis mauris viverra nec. Nunc suscipit aliquam quam, ut porttitor metus condimentum quis. Ut mi mi, auctor ut lorem non, elementum rutrum nisi. Quisque ac est vel ligula fringilla facilisis. Phasellus eget est arcu.</p>
+
+    <p>Nam consectetur convallis vulputate. Quisque ligula nunc, laoreet at maximus at, efficitur et libero. Suspendisse porttitor mattis lectus, vitae mattis augue. Vivamus rutrum accumsan euismod. Suspendisse in nisl interdum, tincidunt nisl id, mollis sapien. In malesuada faucibus lorem, vel dignissim massa malesuada id. Aenean sagittis fermentum mi vel ultrices.</p>
+
+    <p>Ut at interdum nulla. Sed a velit purus. Praesent tincidunt diam augue, a scelerisque ipsum suscipit sit amet. Sed posuere ultricies nibh, eu tincidunt augue semper ac. Donec congue massa eros, ac aliquet arcu pharetra sit amet. Maecenas mattis, felis in commodo vehicula, diam risus accumsan libero, sit amet lacinia ipsum lectus nec tellus. Maecenas rhoncus pulvinar laoreet. Fusce vestibulum euismod eros, eu volutpat neque ultrices non. In est diam, vulputate in mauris non, hendrerit scelerisque lorem. Sed sollicitudin dignissim dolor at tempus. Donec leo leo, tincidunt a risus sit amet, gravida tempus nulla.</p>
+
+    <div id="positioned">
+      I'm positioned!
+      <div id="buddy"></div>
+    </div>
+    <div id="fixed"></div>
+  </body>
+</html>

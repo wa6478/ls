@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Arrays</title>
+    <script>
+    function lastIndexOf(arr, val) {
+      for (var i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] === val) {
+          return i;
+        }
+      }
+
+      return -1;
+    }
+
+    console.log(lastIndexOf([1, 4, 3, 4, 5], 4)); // 3
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function repeat(string, times) {
+      if (times < 0 || isNaN(times)) {
+        return undefined;
+      }
+
+      var output = '';
+      for (var i = 1; i <= times; i++) {
+        output += string;
+      }
+      
+      console.log(output);
+    }
+
+
+    repeat('abc', 1);    // "abc"
+    repeat('abc', 2);    // "abcabc"
+    repeat('abc', -1);   // undefined
+    repeat('abc', 0);    // ""
+    repeat('abc', 'a');  // undefined
+    
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

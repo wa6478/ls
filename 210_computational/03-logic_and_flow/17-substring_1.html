@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function substr(string, start, length) {
+      var i = start;
+      var substring = '';
+
+      if (start < 0) {
+        i = string.length + start;
+      }
+
+      for (var j = 0; j < length; j++) {
+        if (string[i] === undefined) {
+          break;
+        }
+        
+        substring += string[i];
+        i++;
+      }
+
+      return substring;
+    }
+
+    var string = 'hello world';
+
+    console.log(substr(string, 2, 4));     // "llo "
+    console.log(substr(string, -3, 2));    // "rl"
+    console.log(substr(string, 8, 20));    // "rld"
+    console.log(substr(string, 0, -20));   // ""
+    console.log(substr(string, 0, 0));     // ""
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

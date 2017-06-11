@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Sum or Product of Consecutive Integers
+
+    var number = parseInt(prompt('Enter a number greater than 0'), 10);
+    var sumOrProduct = (prompt('Enter "s" to compute the sum, or "p" to compute the product'));
+    var numbers = []; // don't really need to create an array in this case, although I suppose this would make the code more flexible if this was something other than just a straight 1..x sequence.
+
+    for (var i = 1; i <= number; i += 1) {
+      numbers.push(i);
+    }
+
+    if (sumOrProduct === 's') {
+      log('sum', number, computeSum(numbers, sumOrProduct));
+    } else if (sumOrProduct === 'p') {
+      log('product', number, computeSum(numbers, sumOrProduct));
+    }
+
+    // Further exploration:
+
+    function computeSum(array, operation) {
+      var total = array.reduce(function (sum, element) {
+        if (operation === 's') {
+          return sum + element;
+        } else if (operation === 'p') {
+          return sum * element;
+        }
+      })
+
+      return total;
+    }
+
+    function log(operation, number, output) {
+      console.log('The ' + operation + ' of the integers between 1 and ' + String(number) + ' is ' + String(output));
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

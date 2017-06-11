@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    // start (inc) .. end (exc)
+    // if start > end, end = start, start = end
+    // if start == end, return ''
+    // if end is omitted (undefined), return start through end of string
+    // if start or end is 0 or NaN, treat as 0
+    // if start or end is greater than length of string, treat as equal to the string length
+
+    function substring(string, start, end) {
+      var output = '';
+      var lastIndex = string.length;
+
+      if (end === undefined) {
+        end = lastIndex;
+      }
+
+      if (isNaN(start) || start < 0) {
+        start = 0;
+      }
+
+      if (isNaN(end) || end < 0) {
+        end = 0;
+      }
+
+      if (start > lastIndex) {
+        start = lastIndex;
+      }
+
+      if (end > lastIndex) {
+        end = lastIndex;
+      }
+
+      if (start === end) {
+        return output;
+      }
+
+      if (start > end) {
+        var tempEnd = end;
+        end = start;
+        start = tempEnd;
+      }
+
+      for (var i = start; i < end; i++) {
+        output += string[i];
+      }
+
+      return output;
+    }
+
+    var string = 'hello world';
+
+    console.log(substring(string, 2, 4));    // "ll"
+    console.log(substring(string, 4, 2));    // "ll"
+    console.log(substring(string, 0, -1));   // ""
+    console.log(substring(string, 2));       // "llo world"
+    console.log(substring(string, 'a'));     // "hello world"
+    console.log(substring(string, 8, 20));   // "rld"
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

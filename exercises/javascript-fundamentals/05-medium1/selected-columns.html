@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    function getSelectedColumns(numbers, cols) {
+      var result = [];
+      for (var i = 0, length = numbers.length; i < length; i++) {
+        for (var j = 0, colsLength = cols.length; j < colsLength; j++) {
+          if (!result[j]) {
+            result[j] = [];
+          }
+
+          result[j][i] = numbers[i][cols[j]];
+        }
+      }
+
+      return result;
+    }
+
+    var array1 = [[1, 2, 3], [4, 5 ,6], [7, 8 ,9]];
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

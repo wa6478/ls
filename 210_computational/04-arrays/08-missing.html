@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Arrays</title>
+    <script>
+    function missing(arr) {
+      var missingNumbers = [];
+
+      for (var i = arr[0]; i < arr[arr.length - 1]; i++) {
+        if (arr.indexOf(i) === -1) {
+          missingNumbers.push(i);
+        }
+      }
+
+      return missingNumbers;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

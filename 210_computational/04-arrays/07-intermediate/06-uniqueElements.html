@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Arrays</title>
+    <script>
+    // function uniqueElements(arr) {
+    //   var uniques = [];
+
+    //   for (var i = 0; i < arr.length; i++) {
+    //     if (uniques.includes(arr[i])) {
+    //       continue;
+    //     }
+
+    //     uniques.push(arr[i]);
+    //   }
+
+    //   return uniques;
+    // }
+
+    function uniqueElements(arr) {
+      var uniques = [];
+
+      for (var i = 0; i < arr.length; i++) {
+        if (uniques.indexOf(arr[i]) === -1) {
+          uniques.push(arr[i]);
+        }
+      }
+
+      return uniques;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

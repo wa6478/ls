@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    
+    function reverse(input) {
+      var result;
+
+      if (Array.isArray(input)) {
+        result = [];
+      } else {
+        result = '';
+      }
+
+      for (var i = input.length - 1; i >= 0; i--) {
+        if (Array.isArray(result)) {
+          result[result.length] = input[i];
+        } else {
+          result += input[i];
+        }
+      }
+
+      return result;
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

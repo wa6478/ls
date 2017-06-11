@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    var today = new Date;
+    var day = today.getDay();
+    var date = today.getDate();
+    var month = today.getMonth();
+    var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    console.log("Today's day is " + daysOfWeek[day] + ', ' + months[month] + ' ' + date + dateSuffix(date));
+
+    function dateSuffix(date) {
+      var suffix = 'th';
+      var st = [1, 21, 31];
+      var nd = [2, 22];
+      var rd = [3, 23];
+
+      if (st.indexOf(date) >= 0) {
+        suffix = 'th';
+      }
+
+      if (nd.indexOf(date) >= 0) {
+        suffix = 'nd';
+      }
+
+      if (rd.indexOf(date) >= 0) {
+        suffix = 'rd';
+      }
+
+      return suffix;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

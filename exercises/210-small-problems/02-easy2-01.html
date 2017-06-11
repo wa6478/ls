@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Daily double
+
+    function crunch(string) {
+      var letters = string.split('');
+      var crunched = '';
+
+      for (var i = 0; i < letters.length; i += 1) {
+        if (letters[i] === letters[i + 1]) {
+          continue;
+        }
+
+        crunched += letters[i];
+      }
+
+      return crunched;
+    }
+
+    console.log(crunch('ddaaiillyy ddoouubbllee'));        // 'daily double'
+    console.log(crunch('4444abcabccba'));                  // '4abcabcba'
+    console.log(crunch('ggggggggggggggg'));                // 'g'
+    console.log(crunch('a'));                              // 'a'
+    console.log(crunch(''));                               // ''
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+
+    function gcd(num1, num2) {
+      var smallernum;
+
+      if (num1 <= num2) {
+        smallernum = num1;
+      } else {
+        smallernum = num2;
+      }
+
+      for (var i = smallernum; i > 0; i--) {
+        if (num1 % i === 0 && num2 % i === 0) {
+          return i
+        }
+      }
+    }
+
+
+    console.log(gcd(12, 4));   // 4
+    console.log(gcd(15, 10));  // 5
+    console.log(gcd(9, 2));    // 1
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

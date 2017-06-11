@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function toLowerCase(string) {
+      var output = '';
+      for (var i = 0; i < string.length; i++) {
+        var numeric = string.charCodeAt(i);
+
+        if (numeric < 65 || numeric > 90) {
+          output += string[i];
+        } else {
+          numeric += 32;
+          output += String.fromCharCode(numeric);
+        }
+      }
+      
+      return output;
+    }
+
+    console.log(toLowerCase('ALPHABET'));      // "alphabet"
+    console.log(toLowerCase('123'));           // "123"
+    console.log(toLowerCase('abcDEF'));        // "abcdef"
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

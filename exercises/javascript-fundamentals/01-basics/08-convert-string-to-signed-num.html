@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    function stringToSignedInteger(numstr) {
+      var i = 0;
+      var result = 0;
+      var signs = ['-', '+'];
+
+      for (; i < numstr.length; i += 1) {
+        if (signs.includes(numstr[i])) {
+          continue;
+        }
+        result *= 10;
+        result += findInteger(numstr[i]);
+      }
+
+      if (numstr[0] === '-') {
+        return result * -1;
+      } else {
+        return result;
+      }
+    }
+
+    function findInteger(number) {
+      var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      var i = 0;
+
+      for (; i < numbers.length; i += 1) {
+        if (number === numbers[i]) {
+          return i;
+        }
+      }
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

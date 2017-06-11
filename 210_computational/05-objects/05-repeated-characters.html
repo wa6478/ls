@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    // function repeatedCharacters(word) {
+    //   var chars = word.toLowerCase().split('');
+    //   var counts = {};
+
+    //   for (var i = 0; i < chars.length; i++) {
+    //     if (counts[chars[i]]) {
+    //       counts[chars[i]] += 1;
+    //     } else {
+    //       counts[chars[i]] = 1;
+    //     }
+    //   }
+
+    //   var repeated = {};
+    //   var countKeys = Object.keys(counts);
+
+    //   for (var j = 0; j < countKeys.length; j++) {
+    //     if (counts[countKeys[j]] > 1) {
+    //       repeated[countKeys[j]] = counts[countKeys[j]];
+    //     }
+    //   }
+
+    //   return repeated;
+    // }
+
+    // solution's approach:
+
+    function repeatedCharacters(word) {
+      // no conversion to array
+      var lowWord = word.toLowerCase();
+      var result = {};
+
+      for (var i = 0; i < lowWord.length; i++) {
+        if (result[lowWord[i]]) {
+          result[lowWord[i]] += 1;
+        } else {
+          result[lowWord[i]] = 1;
+        }
+      }
+
+      // not setting up separate array for keys, but instead using ... in to iterate through each key
+      for (key in result) {
+        if (result[key] < 2) {
+          delete result[key];
+        }
+      }
+
+      return result;
+    }
+
+    console.log(repeatedCharacters('Programming'));    // { r: 2, g: 2, m: 2 }
+    console.log(repeatedCharacters('Combination'));    // { o: 2, i: 2, n: 2 }
+    console.log(repeatedCharacters('Pet'));            // {}
+    console.log(repeatedCharacters('Paper'));          // { p: 2 }
+    console.log(repeatedCharacters('Baseless'));       // { s: 3, e: 2 }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

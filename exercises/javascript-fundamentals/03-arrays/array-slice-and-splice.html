@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    
+    function slice(array, start, end) {
+      var result = [];
+
+      if (start > array.length) {
+        start = array.length;
+      }
+
+      if (end > array.length) {
+        end = array.length;
+      }
+
+      for (var i = start; i < end; i++) {
+        result[result.length] = array[i];
+      }
+
+      return result;
+    }
+
+    function splice(array, start, deleteCount) {
+      var deleted = [];
+      var addCount = arguments.length - 3;
+      var addItems = [];
+      var arrayCopy = [];
+
+      // Capture items to add in own array
+      for (var i = 3; i < arguments.length; i++) {
+        addItems.push(arguments[i]);
+      }
+
+      // Save items to delete in deleted array
+      // Set the position of delete item equal to what it will be once array is shortened
+      for (var i = start; i < start + deleteCount; i++) {
+        if (i >= array.length) {
+          break;
+        }
+        deleted.push(array[i]);
+        array[i] = array[i + deleteCount];
+      }
+
+      // Set final length of array, shortening for delete count, and adding for add count
+      array.length = array.length - deleteCount + addCount;
+
+      // Create a copy of array so we have the original values when we make room for the items to be inserted
+      for (var i = 0; i < array.length; i++) {
+        arrayCopy.push(array[i]);
+      }
+
+      // Set values of elements after the inserted items to their original value form the copied array
+      for (var i = start + addCount; i < array.length; i++) {
+        array[i] = arrayCopy[i - addCount];
+      }
+
+      // Overwrite the elements at the position to insert from our addItems array
+      for (var i = start; i < start + addCount; i++) {
+        array[i] = addItems[i - start];
+      }
+
+      // Return any items that were deleted
+      return deleted;
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

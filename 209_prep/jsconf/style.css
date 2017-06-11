@@ -1,0 +1,398 @@
+@import url("whitespace-reset.css");
+
+body {
+  font: 100 16px 'Open Sans', Arial, sans-serif;
+  margin-top: 55px;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: #008000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+h1, h2, h3 {
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Navigation */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  border-top: 10px solid #f6f6f6;
+  z-index: 3;
+}
+
+nav ul {
+  font-size: 0;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+nav li {
+  line-height: 44px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0 27px;
+}
+
+nav a {
+  color: #444;
+}
+
+/* Shared Section Styling*/
+
+header, section {
+  border-bottom: 1px solid #f1f1f1;
+  margin: 0 30px;
+  box-sizing: border-box;
+}
+
+header {
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.wrapper p {
+  text-align: left;
+}
+
+.wrapper p {
+  padding: 0 0 25px 0;
+}
+
+/* Header */
+
+header {
+  color: #fff;
+  padding: 150px 0 60px 0;
+  height: 429px;
+  background: transparent url("images/front.jpg") no-repeat 50% 0;
+}
+
+header h1 {
+  font-size: 72px;
+}
+
+header h2 {
+  text-transform: uppercase;
+  font-size: 31px;
+}
+
+header h1 img {
+  display: block;
+  margin: 0 auto 4px auto;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+
+/* Content Sections */
+
+section {
+  padding: 75px 0 55px 0;
+}
+
+section h2,
+footer h2 {
+  font-size: 48px;
+  font-weight: 100;
+  padding-bottom: 45px;
+}
+
+section p {
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+
+a.button {
+  display: inline-block;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  background: #008000;
+  color: #fff;
+}
+
+a.button:hover {
+  text-decoration: none;
+  background: #006000;
+}
+
+/* Speakers */
+
+section#speakers div.wrapper {
+  max-width: 870px;
+  margin: 0 auto;
+}
+
+section#speakers ul {
+  margin-left: -15px;
+  font-size: 0;
+  text-align: center;
+}
+
+section#speakers li {
+  width: 280px;
+  height: 380px;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #ebebeb;
+  vertical-align: top;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+section#speakers li img {
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+}
+section#speakers p {
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+section#speakers h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #008000;
+  margin-bottom: 5px;
+}
+
+section#speakers figcaption {
+  display: none
+}
+
+section#speakers figcaption p {
+  font-size: 13px;
+  line-height: 15px;
+  color: #fff;
+  padding: 0 15px 10px 15px;
+}
+
+section#speakers li:hover figcaption {
+  position: absolute;
+  background: rgba(0, 0, 0, .9);
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px 0 0 0;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Schedule */
+
+section#schedule table {
+  max-width: 955px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+section#schedule thead {
+  display: none;
+}
+
+section#schedule tr {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+section#schedule tr:first-child {
+  border-top: 1px solid #f1f1f1;
+}
+
+section#schedule td {
+  padding: 10px 0 15px 0;
+}
+
+section#schedule img {
+  width: 130px;
+  height: auto;
+}
+
+section#schedule h3,
+section#schedule time {
+  font-size: 24px;
+  font-weight: normal;
+  display: inline-block;
+  text-align: left;
+}
+
+section#schedule a {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 0 0 0;
+}
+
+section#schedule ul {
+  display: inline-block;
+}
+
+section#schedule li {
+  display: inline-block;
+  font-size: 8px;
+  border: 1px solid gray;
+  padding: 0 3px;
+  background: lightgray;
+}
+
+section#schedule time {
+  padding: 0 20px 0 0;
+}
+
+/* Sponsors */
+
+section#sponsors h3 {
+  clear: left;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  padding: 0 0 5px 0;
+}
+
+section#sponsors li {
+  display: inline-block;
+}
+
+ul.gold,
+ul.silver,
+ul.support {
+  overflow: hidden;
+}
+
+ul.gold li,
+ul.silver li,
+ul.support li {
+  display: block;
+  float: left;
+}
+
+ul.gold li:nth-of-type(odd) {
+  clear:left;
+}
+
+ul.gold li {
+  margin-right: 40px;
+}
+
+ul.support li {
+  padding-right: 30px;
+  box-sizing: border-box;
+  width: 220px;
+}
+
+ul.silver li {
+  width: 270px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+ul.support img,
+ul.silver img {
+  display: block;
+  width: 100%;
+}
+
+/* Footer */
+
+footer {
+  background: #000 url("images/people.jpg") 50% 23% no-repeat;
+  background-size: cover;
+  padding: 35px 0 15px 0;
+}
+
+footer h2, 
+footer h3, 
+footer p {
+  color: #fff;
+}
+
+footer h3 {
+  font-weight: 600;
+  font-size: 31px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+footer div.bgwrap {
+  background: rgba(0, 0, 0, .7);
+  width: 100%;
+}
+
+footer div.wrapper {
+  padding: 10px 15px 0 15px;
+}
+
+/* Media Queries */
+
+@media (max-width: 654px) {
+  nav {
+    display: none;
+  }
+  body {
+    margin: 0;
+  }
+  header {
+    padding: 80px 0 20px 0;
+    height: 329px;
+    background-position: 50% 50%;
+  }
+  header h1 {
+    font-size: 40px;
+  }
+  header h2 {
+    font-size: 20px;
+  }
+  footer h2 {
+    font-size: 32px;
+  }
+
+  section#schedule tr {
+    position: relative;
+    display: block;
+  }
+  section#schedule td {
+    display: block;
+  }
+  section#schedule td:first-child {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  section#schedule td:last-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  section#schedule img {
+    display: block;
+    width: 80px;
+  }
+}
+
+
+
+

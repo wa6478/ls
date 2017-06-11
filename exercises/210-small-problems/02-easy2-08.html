@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Grade book
+
+    function getGrade() {
+      var sum = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+      }
+      
+      return letterGrade(sum / arguments.length);
+    }
+
+    function letterGrade(num) {
+      if (num >= 90) {
+        return 'A';
+      } else if (num >= 80) {
+        return 'B';
+      } else if (num >= 70) {
+        return 'C';
+      } else if (num >= 60) {
+        return 'D';
+      } else {
+        return 'F'
+      }
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

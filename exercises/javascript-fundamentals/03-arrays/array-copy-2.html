@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    var myArray = [1, 2, 3, 4];
+    var myOtherArray = [];
+
+    for (var i = 0; i < myArray.length; i += 1) {
+      myOtherArray.push(myArray[i]);
+    }
+
+    myArray.pop();
+    console.log(myArray);
+    console.log(myOtherArray);
+
+    var myArray = [1, 2, 3, 4];
+    var myOtherArray = myArray.slice(0);
+
+    myArray.pop();
+    console.log(myArray);
+    console.log(myOtherArray);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

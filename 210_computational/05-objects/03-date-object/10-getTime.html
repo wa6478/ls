@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    var today = new Date;
+
+    function formattedMonth(date) {
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      return months[date.getMonth()];
+    }
+
+    function formattedDay(date) {
+      var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+      return daysOfWeek[date.getDay()];
+    }
+
+    function formattedDate(date) {
+      var day = formattedDay(date);
+      var month = formattedMonth(date);
+
+      return "Today's day is " + day + ', ' + month + ' ' + dateSuffix(date.getDate());
+    }
+
+    function dateSuffix(date) {
+      var suffix = 'th';
+      var st = [1, 21, 31];
+      var nd = [2, 22];
+      var rd = [3, 23];
+
+      if (st.indexOf(date) >= 0) {
+        suffix = 'th';
+      }
+
+      if (nd.indexOf(date) >= 0) {
+        suffix = 'nd';
+      }
+
+      if (rd.indexOf(date) >= 0) {
+        suffix = 'rd';
+      }
+
+      return date + suffix;
+    }
+
+    console.log(formattedDate(today));
+    console.log(today.getTime());
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

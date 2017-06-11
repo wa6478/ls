@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Arrays</title>
+    <script>
+    function firstValue(arr, value) {
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === value) {
+          return i;
+        }
+      }
+
+      return -1;
+    }
+
+    console.log(firstValue([1, 2, 3, 4], 3));
+    console.log(firstValue([1, 2, 3, 4], 0));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

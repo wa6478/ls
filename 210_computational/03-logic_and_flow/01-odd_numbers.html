@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function logOddNumbers(num) {
+      for (var i = 0; i <= num; i++) {
+        if (isOdd(i)) {
+          console.log(i);
+        }
+      }
+    }
+
+    function isOdd(num) {
+      return !(num % 2 === 0)
+    }
+    
+    logOddNumbers(19);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

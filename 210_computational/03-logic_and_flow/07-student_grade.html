@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    
+    var grade1 = Number(prompt('Enter score 1:'));
+    var grade2 = Number(prompt('Enter score 2:'));
+    var grade3 = Number(prompt('Enter score 3:'));
+
+    var average = (grade1 + grade2 + grade3) / 3
+
+    var grade = 'F'
+
+    if (average >= 90) {
+      grade = 'A';
+    } else if (average >= 70) {
+      grade = 'B';
+    } else if (average >= 50) {
+      grade = 'C'
+    }
+
+    console.log('Based on the average of your 3 scores your letter grade is ' + '"' + grade + '"' )
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Multiples of 3 and 5
+
+    function multisum(limit) {
+      var numbers = [];
+
+      for (var i = 1; i <= limit; i += 1) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          numbers.push(i);
+        }
+      }
+
+      return numbers.reduce(function(sum, el) { return sum + el; });
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

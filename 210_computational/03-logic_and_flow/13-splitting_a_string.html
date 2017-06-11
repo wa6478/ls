@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function splitString(string, delimiter) {
+      if (delimiter === undefined) {
+        console.log('ERROR: No delimiter');
+        return;
+      }
+
+      var current = '';
+
+      for (var i = 0; i < string.length; i++) {
+        if (delimiter === '') {
+          console.log(string[i]);
+        } else if (string[i] === delimiter) {
+          console.log(current);
+          current = '';
+        } else {
+          current += string[i];
+        }
+      }
+
+      if (delimiter === '' || delimiter === string[i - 1]) {
+        return;
+      }
+
+      console.log(current);
+    }
+
+    splitString('abc,123,hello world', ',');
+    // logs:
+    // abc
+    // 123
+    // hello world
+    console.log('---');
+
+    splitString('hello');
+    // logs:
+    // ERROR: No delimiter
+    console.log('---');
+
+    splitString('hello', '');
+    // logs:
+    // h
+    // e
+    // l
+    // l
+    // o
+    console.log('---');
+
+    splitString('hello', ';');
+    // logs:
+    // hello
+    console.log('---');
+
+    splitString(';hello;', ';');
+    // logs:
+    //  (this is a blank line)
+    // hello
+    console.log('---');
+    
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

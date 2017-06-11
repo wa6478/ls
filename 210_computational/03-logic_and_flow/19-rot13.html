@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function rot13(string) {
+      var limits = 'aAzZ'
+      var lowercaseFloor = limits.charCodeAt(0);
+      var lowercaseCeiling = limits.charCodeAt(2);
+      var uppercaseFloor = limits.charCodeAt(1);
+      var uppercaseCeiling = limits.charCodeAt(3);
+
+      var output = '';
+      for (var i = 0; i < string.length; i++) {
+        var asciiNumeric = string.charCodeAt(i);
+
+        if (asciiNumeric >= lowercaseFloor && asciiNumeric <= lowercaseCeiling) {
+          asciiNumeric += 13;
+          
+          if (asciiNumeric > lowercaseCeiling) {
+            asciiNumeric -= 26; 
+          }
+
+          output += String.fromCharCode(asciiNumeric);
+
+        } else if (asciiNumeric >= uppercaseFloor && asciiNumeric <= uppercaseCeiling) {
+          asciiNumeric += 13;
+
+          if (asciiNumeric > uppercaseCeiling) {
+            asciiNumeric -= 26;
+          }
+
+          output += String.fromCharCode(asciiNumeric);
+        } else {
+          output += string[i];
+        }
+      }
+
+      return output;
+    }
+
+    console.log(rot13('Teachers open the door, but you must enter by yourself.'));
+
+    // logs:
+    // Grnpuref bcra gur qbbe, ohg lbh zhfg ragre ol lbhefrys.
+
+    console.log(rot13(rot13('Teachers open the door, but you must enter by yourself.')));
+
+    // logs:
+    // Teachers open the door, but you must enter by yourself.
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Arrays</title>
+    <script>
+    function join(arr, str) {
+      var result = '';
+      for (var i = 0; i < arr.length; i++) {
+        result += arr[i]
+        
+        if (i < arr.length - 1) {
+          result += str
+        }
+      }
+      return result;
+    }
+
+    console.log(join(['bri', 'tru', 'wha'], 'ck '));       // 'brick truck wha'
+    console.log(join([1, 2, 3], ' and '));                 // '1 and 2 and 3'
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

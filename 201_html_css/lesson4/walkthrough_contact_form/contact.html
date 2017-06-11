@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Contact Form</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form action="" method="post">
+      <fieldset>
+        <dl>
+          <dt>
+            <label for="first_name">First Name</label>
+          </dt>
+          <dd>
+            <input type="text" id="first_name" name="first_name">
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <label for="last_name">Last Name</label>
+          </dt>
+          <dd>
+            <input type="text" id="last_name" name="last_name">
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <label for="email">Last Name</label>
+          </dt>
+          <dd>
+            <input type="email" id="email" name="email" placeholder="myaddress@email.com" autocomplete="off" autocapitalize="none" autocorrect="off">
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            <label for="city">Last Name</label>
+          </dt>
+          <dd>
+            <input type="text" id="city" name="city">
+          </dd>
+        </dl>
+        <dl class="partial">
+          <dt>
+            <label for="state">State</label>
+          </dt>
+          <dd>
+            <select name="state" id="state">
+              <option>AK</option>
+              <option>AL</option>
+              <option>AR</option>
+              <option>AZ</option>
+              <option>CA</option>
+              <option>CO</option>
+              <option>CT</option>
+              <option>DC</option>
+              <option>DE</option>
+              <option>FL</option>
+              <option>GA</option>
+              <option>HI</option>
+              <option>IA</option>
+              <option>ID</option>
+              <option>IL</option>
+              <option>IN</option>
+              <option>KS</option>
+              <option>KY</option>
+              <option>LA</option>
+              <option>MA</option>
+              <option>MD</option>
+              <option>ME</option>
+              <option>MI</option>
+              <option>MN</option>
+              <option>MO</option>
+              <option>MS</option>
+              <option>MT</option>
+              <option>NC</option>
+              <option>ND</option>
+              <option>NE</option>
+              <option>NH</option>
+              <option>NJ</option>
+              <option>NM</option>
+              <option>NV</option>
+              <option>NY</option>
+              <option>OH</option>
+              <option>OK</option>
+              <option>OR</option>
+              <option>PA</option>
+              <option>RI</option>
+              <option>SC</option>
+              <option>SD</option>
+              <option>TN</option>
+              <option>TX</option>
+              <option>UT</option>
+              <option>VA</option>
+              <option>VT</option>
+              <option>WA</option>
+              <option>WI</option>
+              <option>WV</option>
+              <option>WY</option>
+            </select>
+          </dd>
+        </dl>
+        <dl class="partial">
+          <dt>
+            <label for="zip">Zip</label>
+          </dt>
+          <dd>
+            <input type="text" id="zip" name="zip" pattern="^[0-9]{5}$" maxlength="5">
+          </dd>
+        </dl>
+        <dl>
+          <dt>Which of these colors do you most prefer?</dt>
+          <dd>
+            <ul>
+              <li><label><input type="radio" name="favorite" value="red" checked>Red</label></li>
+              <li><label><input type="radio" name="favorite" value="blue">Blue</label></li>
+              <li><label><input type="radio" name="favorite" value="green">Green</label></li>
+              <li><label><input type="radio" name="favorite" value="orange">Orange</label></li>
+            </ul>
+          </dd>
+        </dl>
+        <dl>
+          <dt>What web technologies do you want to hear more about?</dt>
+          <dd>
+            <ul>
+              <li><label><input type="checkbox" name="HTML">HTML</label></li>
+              <li><label><input type="checkbox" name="CSS">CSS</label></li>
+              <li><label><input type="checkbox" name="Ruby">Ruby</label></li>
+              <li><label><input type="checkbox" name="Javascript">Javascript</label></li>
+              <li><label><input type="checkbox" name="Rails">Rails</label></li>
+            </ul>
+          </dd>
+        </dl>
+        <dl>
+          <dt><label for="comment_box">Comments:</label></dt>
+          <dd><textarea rows="6" cols="80" id="comment_box" name="comment_box"></textarea></dd>
+        </dl>
+        <input type="hidden" name="timestamp" value="2015-01-01">
+        <input type="submit">
+        <input type="reset">
+        </fieldset>
+    </form>
+  </body>
+</html>

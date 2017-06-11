@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    function invoiceTotal() {
+      var sum = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+      }
+      
+      return sum;
+    }
+
+    console.log(invoiceTotal(20, 30, 40, 50));             // works
+    console.log(invoiceTotal(20, 30, 40, 50, 40, 40));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

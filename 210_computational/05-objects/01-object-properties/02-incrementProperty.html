@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    function incrementProperty(obj, propertyName) {
+      if (obj[propertyName]) {
+        obj[propertyName]++;
+      } else {
+        obj[propertyName] = 1;
+      }
+
+      return obj[propertyName];
+    }
+
+    var wins = {
+      steve: 3,
+      susie: 4,
+    };
+
+    // incrementProperty(wins, 'susie');
+    // wins;
+    // incrementProperty(wins, 'lucy');
+    // wins;
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

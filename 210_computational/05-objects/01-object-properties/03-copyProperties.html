@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    function copyProperties(obj1, obj2) {
+      var count = 0;
+      var property;
+      for (property in obj1) {
+        obj2[property] = obj1[property];
+        count++;
+      }
+      return count;
+    }
+    var hal = {
+      model: 9000,
+      enabled: true,
+    };
+    var sal = {};
+    // copyProperties(hal, sal);  // 2
+    // sal;                       // { model: 9000, enabled: true }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

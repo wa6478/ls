@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function isXor(op1, op2) {
+      if (op1 && op2) {
+        return false;
+      } else {
+        return !!(op1 || op2);
+      }
+    }
+
+    console.log(isXor(false, true));     // true
+    console.log(isXor(true, false));     // true
+    console.log(isXor(false, false));    // false
+    console.log(isXor(true, true));      // false
+    console.log(isXor(false, 3));        // true
+    console.log(isXor('a', undefined));  // true
+    console.log(isXor(null, ''));        // false
+    console.log(isXor('2', 23));         // false
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Bannerizer
+
+    // function logInBox(string) {
+    //   var width = string.length + 2;
+    //   var topBottom = '+';
+    //   var empty = '|';
+    //   var line = '| ' + string + ' |\n';
+      
+    //   for (var i = 1; i <= width; i += 1) {
+    //     topBottom += '-';
+    //     empty += ' ';
+    //   }
+      
+    //   topBottom += '+\n';
+    //   empty += '|\n';
+
+    //   return '\n' + topBottom + empty + line + empty + topBottom;
+
+    // }
+
+    function logInBox(string) {
+      var topBottom = '+-' + '-'.repeat(string.length) + '-+\n';
+      var empty = '| ' + ' '.repeat(string.length) + ' |\n' ;
+      var line = '| ' + string + ' |\n';
+
+      return '\n' + topBottom + empty + line + empty + topBottom;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    
+    function trim(str) {
+      var output = '';
+      var i = 0;
+
+      for (; i < str.length; i++) {
+        if (str[i] !== ' ') {
+          break;
+        }
+      }
+
+      var j = str.length - 1
+
+      for (; j > 0; j--) {
+        if (str[j] !== ' ') {
+          break;
+        }
+      }
+
+      for (; i <= j; i++) {
+        output += str[i];
+      }
+
+      return output
+    }
+
+
+
+    console.log(trim('  abc  '));  // "abc"
+    console.log(trim('abc   '));   // "abc"
+    console.log(trim(' ab c'));    // "ab c"
+    console.log(trim(' a b  c'));  // "a b  c"
+    console.log(trim('      '));   // ""
+    console.log(trim(''));         // ""
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

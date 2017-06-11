@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    
+    function shift(array) {
+      var shifted = array[0];
+
+      for (var i = 1; i < array.length; i++) {
+        array[i - 1] = array[i]; 
+      }
+
+      array.length = array.length - 1;
+
+      return shifted;
+    }
+
+    function unshift(array) {
+      var newElements = arguments.length - 1;
+      var arrayCopy = array.slice();
+
+      array.length = array.length + newElements;
+
+      for (var i = newElements; i < array.length; i++) {
+        array[i] = arrayCopy[i - newElements];
+      }
+
+      for (var i = 0; i < newElements; i++) {
+        array[i] = arguments[i + 1];
+      }
+
+      return array.length;
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

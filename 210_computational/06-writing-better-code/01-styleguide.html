@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Writing Better Code</title>
+    <script>
+    // 1
+    var title = "The Three-Body Problem";
+    // guess:
+    // Use single quotes rather than double quotes
+    // per guide:
+    // use `const` instead of `var`
+    // use single quotes
+
+    // 2
+    var title = 'The Three-Body Problem',
+        author = 'Cixin Liu',
+        page_count = 400;
+
+    // per guide:
+    // use one `const` or `let` per variable
+    // never have to worry about swapping out `,` for `;`
+    // use camel case
+
+    // 3
+    var completed = lastPageRead == 400;
+
+    // always use strict equality operators `===`
+
+    //4
+    if (finishedBook())
+      console.log('You have finished reading this book');
+
+    // guess: don't leave off curly braces
+    // guide: use braces with all multi-line blocks
+
+    // 5
+    function read(pages) {
+      console.log('You started reading.');
+      for (var i=0; i<pages; i++) {
+              var message = 'You read page '+i;
+              console.log(message);
+      }
+    }
+
+    read(400);
+
+    // guess:
+    // leave space between operators (`i=0` should be `i = 0`)
+    // guide:
+    // declare all variables at the top of the function
+    // avoid ++ and --
+    // surround operators with spaces and indent lines with two spaces
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

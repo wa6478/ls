@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // ASCII String Value
+
+    function asciiValue(string) {
+      var sum = 0;
+
+      for (var i = 0; i < string.length; i += 1) {
+        sum += string.charCodeAt(i);
+      }
+
+      return sum;
+    }
+
+    asciiValue('Four score');         // 984
+    asciiValue('Launch School');      // 1251
+    asciiValue('a');                  // 97
+    asciiValue('');                   // 0
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

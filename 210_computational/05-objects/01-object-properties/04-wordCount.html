@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    function wordCount(str) {
+      var words = str.split(' ');
+      var wordCounts = {};
+      for (var i = 0; i < words.length; i++) {
+        if (wordCounts[words[i]]) {
+          wordCounts[words[i]]++;
+        } else {
+          wordCounts[words[i]] = 1;
+        }
+      }
+      return wordCounts;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

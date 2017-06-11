@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises: Logic and Flow Control</title>
+    <script>
+    function generatePattern(n) {
+      for (var i = 1; i <= n; i++) {
+        var pattern = ''
+
+        for (var i2 = 1; i2 <= i; i2++) {
+          pattern += i2;
+        }
+
+        for (var i3 = (n - pattern.length); i3 > 0; i3--) {
+          pattern += '*'
+        }
+
+        console.log(pattern);
+      }
+    }
+
+
+    generatePattern(7);
+    generatePattern(20);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

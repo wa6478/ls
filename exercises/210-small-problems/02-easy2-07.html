@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Double Doubles
+
+    function twice(num) {
+      var stringNum = String(num);
+      if (stringNum.length % 2 !== 0) {
+        return num * 2;
+      }
+
+      for (var i = 0; i < stringNum.length / 2; i += 1) {
+        if (stringNum[i] !== stringNum[stringNum.length / 2 + i]) {
+          return num * 2;
+        }
+      }
+
+      return num;
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Floats 1</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        background: gray;
+      }
+      section {
+        background: yellow;
+        max-width: 1200px;
+        margin: 0 auto;
+        /*overflow: hidden;  can be used as alternative to clearfix */
+      }
+/*      section:after {
+        display: block;
+        content: "";
+        clear: both;
+      } Can remove this if the following element (footer) has a clear*/
+      article {
+        background: green;
+        width: 70%;
+        float:left;
+        padding: 0 30px 0 0;
+        box-sizing: border-box;
+      }
+      aside {
+        float: right;
+        background: blue;
+        overflow: hidden;
+        width: 15%;
+      }
+
+      nav {
+        background: #fff;
+        float:left;
+        width: 15%;
+      }
+
+      footer {
+        background: red;
+        clear:both;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus pretium lectus non aliquet. Cras quis malesuada ex. Nunc tempor quam ligula, et eleifend augue dignissim ut. In pulvinar lectus sed tempus convallis. Vivamus et velit nec ipsum vulputate tincidunt sit amet id risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras id mauris pharetra, efficitur orci sit amet, lobortis quam. Nulla vestibulum neque nulla, non lacinia ipsum pharetra id. Nunc nec lacinia libero, at elementum mauris. Suspendisse et volutpat elit, vitae dapibus turpis. Nam urna eros, vulputate posuere diam ut, accumsan finibus quam. Donec vitae eleifend diam, at cursus erat. Morbi neque nibh, volutpat eget aliquam sit amet, suscipit sit amet velit.</p>
+      </nav>
+      <article>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus pretium lectus non aliquet. Cras quis malesuada ex. Nunc tempor quam ligula, et eleifend augue dignissim ut. In pulvinar lectus sed tempus convallis. Vivamus et velit nec ipsum vulputate tincidunt sit amet id risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras id mauris pharetra, efficitur orci sit amet, lobortis quam. Nulla vestibulum neque nulla, non lacinia ipsum pharetra id. Nunc nec lacinia libero, at elementum mauris. Suspendisse et volutpat elit, vitae dapibus turpis. Nam urna eros, vulputate posuere diam ut, accumsan finibus quam. Donec vitae eleifend diam, at cursus erat. Morbi neque nibh, volutpat eget aliquam sit amet, suscipit sit amet velit.</p>
+
+        <p>In accumsan sapien nibh, id interdum augue dapibus sit amet. Proin pulvinar ex non odio dapibus ultrices. Aliquam sit amet est molestie mauris faucibus cursus vel vel leo. Ut fermentum dapibus malesuada. Morbi a lectus magna. Maecenas ultrices pulvinar pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed porta euismod est quis auctor. In viverra tortor at enim ullamcorper, sit amet accumsan nunc volutpat. Etiam a ullamcorper ex. Pellentesque ornare nisl viverra, cursus augue vel, cursus leo. Fusce massa libero, varius in dui ut, pharetra faucibus arcu. Sed enim elit, iaculis at lacinia non, dapibus nec eros. Curabitur quis imperdiet tortor. Cras sit amet porta libero, et interdum erat. Nullam faucibus risus leo, et commodo metus pellentesque vitae.</p>
+
+        <p>Pellentesque convallis nunc et metus bibendum, nec consequat tortor dapibus. Suspendisse rhoncus dui elit, eget consectetur lectus lobortis ultricies. Phasellus dignissim quam massa, quis auctor urna faucibus a. Nam non lacus vehicula, porta urna nec, sagittis felis. Nulla facilisi. Morbi sed pharetra quam. Phasellus pharetra luctus arcu non finibus.</p>
+
+        <p>Sed rhoncus, nunc vitae blandit congue, arcu felis consequat orci, vel ullamcorper nibh tortor in elit. Suspendisse varius, nulla at semper gravida, felis nisl auctor nisl, quis accumsan nibh mauris id odio. Maecenas iaculis augue id aliquam accumsan. Nam porttitor metus sit amet risus malesuada tempus. In sed porttitor tortor. Praesent interdum tincidunt vestibulum. Cras risus urna, blandit ut aliquet eget, aliquet sed lacus.</p>
+      </article>
+      <aside>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus purus sem, porttitor id rutrum consequat, condimentum imperdiet lacus. Nunc elit dui, aliquet in diam in, suscipit elementum justo. Sed maximus ante orci, ac egestas neque iaculis vel. In maximus turpis arcu, id feugiat massa tincidunt sed. Fusce ut diam eros. Nunc mi mauris, porttitor nec urna eu, sagittis feugiat justo. Praesent ornare ligula et mauris tincidunt maximus. Phasellus varius lacinia urna, in commodo augue posuere eget. Nunc vitae consequat turpis. Suspendisse eget volutpat tortor. Morbi vitae tortor arcu. Donec sed velit quis nisi vehicula blandit ullamcorper vel sapien. Nam gravida urna est, sed imperdiet libero interdum ut.</p>
+
+        <p>Class aptent taciti sociosqu ad litonare.</p>
+      </aside>
+    </section>
+    <footer>
+      <p>Hi I'm a footer</p>
+    </footer>
+  </body>
+</html>

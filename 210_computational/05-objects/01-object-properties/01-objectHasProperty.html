@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Objects</title>
+    <script>
+    function objectHasProperty(obj, str) {
+      return obj[str] !== undefined;
+    }
+
+    var pets = {
+      cat: 'Simon',
+      dog: 'Dwarf',
+      mice: null,
+    };
+
+    objectHasProperty(pets, 'dog');       // true
+    objectHasProperty(pets, 'lizard');    // false
+    objectHasProperty(pets, 'mice');      // true
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

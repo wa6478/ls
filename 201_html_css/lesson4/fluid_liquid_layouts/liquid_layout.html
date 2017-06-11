@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Liquid Layout</title>
+    <meta charset="utf-8" />
+    <style>
+      #content,
+      #sidebar {
+        padding: 20px 30px;
+        box-sizing: border-box;
+      }
+
+      #content {
+        float: left;
+        width: 70%;
+      }
+
+      #sidebar {
+        /*width: 30%;*/
+        overflow: hidden;
+
+      }
+
+      main { /* This is what separates a fluid layout from a liquid layout -- liquid takes up whole page, fluid only up to a point*/
+        min-width: 600px;
+        max-width: 1400px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui neque, pretium et eleifend ut, finibus at ex. Sed tincidunt id nulla in fringilla. Quisque iaculis consectetur mauris porta fringilla. Cras sit amet nibh quis purus cursus luctus nec quis nulla. Praesent quis sapien at justo gravida tristique sed sed arcu. Donec lectus quam, porttitor ut arcu a, feugiat faucibus elit. Vivamus cursus lobortis maximus. Praesent iaculis tristique iaculis. Nam rutrum luctus nibh, scelerisque euismod tortor bibendum porttitor. Mauris posuere odio at rhoncus molestie. Fusce dignissim mollis mauris vitae lobortis.</p>
+
+        <p>Aenean eu ante sagittis, vestibulum nulla quis, finibus nisi. Maecenas sapien mauris, mollis sed maximus bibendum, pulvinar vitae est. Etiam ac elit libero. Maecenas diam lacus, placerat et ligula molestie, convallis luctus massa. Nunc eu sem ac diam fermentum vehicula et quis est. Curabitur odio dolor, commodo a sapien sed, eleifend porta arcu. Nam consectetur, arcu ac dictum maximus, mauris mauris sollicitudin est, at pharetra lectus justo vel felis.</p>
+
+        <p>Integer sem lorem, finibus ac pulvinar iaculis, euismod dignissim leo. Ut accumsan tempus leo, interdum ultricies tellus venenatis eu. Curabitur consequat sem tortor, ac iaculis nulla ultricies et. Praesent at enim leo. Morbi vel viverra tortor. Nulla at imperdiet odio. In elit velit, vehicula non pharetra non, fringilla ac metus. Morbi dignissim lectus eget enim volutpat gravida. Pellentesque feugiat suscipit dolor ac ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis interdum egestas. Quisque ut sollicitudin diam. Nulla in nulla pulvinar, porttitor diam nec, tempus ligula. Nulla sodales aliquet lacinia.</p>
+
+        <p>Maecenas suscipit dui eget imperdiet tristique. Cras in tempus elit. Praesent id sem fermentum, porta odio quis, consequat dui. Vivamus porttitor, arcu eget pretium tristique, dui odio tristique sapien, luctus varius quam dui sit amet lacus. Vestibulum at libero ac dui congue faucibus. Etiam finibus urna sit amet arcu vestibulum placerat. Donec sed ex ullamcorper, semper ante eu, laoreet magna. Suspendisse vel tincidunt nibh, sed hendrerit ex.</p>
+
+        <p>Nam sollicitudin suscipit elit, vel consectetur mi congue sed. Mauris diam eros, sodales et pharetra vulputate, efficitur vel enim. Integer at nisl et justo pulvinar sagittis vel sed mi. Maecenas placerat neque quis iaculis malesuada. Quisque porta libero id lorem fermentum, sit amet tincidunt metus consectetur. Ut ligula justo, ornare eget maximus eget, condimentum id magna. Suspendisse nec sapien ut lorem venenatis pulvinar. Morbi vulputate vitae sem vitae egestas. Vivamus a magna ac lacus maximus fermentum et in odio. Suspendisse et mattis nunc, a sodales tellus. Cras laoreet at nisi id convallis.</p>
+      </div>
+
+      <div id="sidebar">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui neque, pretium et eleifend ut, finibus at ex. Sed tincidunt id nulla in fringilla. Quisque iaculis consectetur mauris porta fringilla. Cras sit amet nibh quis purus cursus luctus nec quis nulla. Praesent quis sapien at justo gravida tristique sed sed arcu. Donec lectus quam, porttitor ut arcu a, feugiat faucibus elit. Vivamus cursus lobortis maximus. Praesent iaculis tristique iaculis. Nam rutrum luctus nibh, scelerisque euismod tortor bibendum porttitor. Mauris posuere odio at rhoncus molestie. Fusce dignissim mollis mauris vitae lobortis.</p>
+      </div>
+    </main>
+  </body>
+</html>

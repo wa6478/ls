@@ -1,0 +1,218 @@
+body {
+  font: normal 20px Helvetica, Arial, sans-serif;
+  color: #45494d;
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+header {
+  background: url("images/bg_body.gif") 50% 0%;
+}
+
+h1 {
+  margin: 0;
+}
+
+h1 img {
+  display: block;
+  margin: 0 auto;
+  padding: 135px 0 126px 0;
+}
+
+/* Navigation */
+
+nav ul {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 0 50px 0;
+}
+
+nav li {
+  display: inline-block;
+  padding-left: 85px;
+}
+
+nav li:first-child {
+  padding-left: 0;
+}
+
+nav li a {
+  color: #cacaca;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+nav li a.current {
+  font-weight: bold;
+  color: #6db9ff;
+}
+
+/* Main */
+
+article {
+  margin-bottom: 120px;
+}
+article p {
+  margin: 0 auto;
+  width: 770px;
+}
+
+h2, h3 {
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 122px;
+}
+
+h2:before,
+h2:after {
+  content: "\2022";
+  padding: 0 20px;
+  vertical-align: 1px;
+}
+
+h3 {
+  color: #3e59b2;
+  font-size: 24px;
+  margin-top: 45px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+article ul {
+  list-style: none;
+}
+
+article li {
+  display: inline-block;
+}
+
+article li a {
+  padding: 30px;
+  display: inline-block;
+  color: #3e59b2;
+  font-size: 24px;
+}
+
+article li a img {
+  margin-bottom: 30px;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 122px;
+  background: #e7e7e7;
+  color: #b2b2b2;
+  padding: 88px 0 10px 0;
+}
+
+footer p {
+  width: 500px;
+  margin: 0 auto;
+}
+
+footer li {
+  list-style: none;
+  display: inline-block;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+  background: url("images/icons_social-media.png");
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+  margin: 45px 62px;
+}
+
+footer a.twitter {
+  background-position: 0 0;
+}
+
+footer a.facebook {
+  background-position: 0 33.3%;
+}
+
+footer a.email {
+  background-position: 0 66.6%;
+}
+
+footer a.instagram {
+  background-position: 0 100%;
+}
+
+@media (max-width: 768px) {
+  article p { max-width: 700px; }
+  footer p { max-width: 600px; }
+  h3 { max-width: 600px; margin: 0 auto;}
+  h1 {width: 30%; margin: 0 auto;}
+  h1 img {padding: 40px 0;}
+  img { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  header h1 img {
+    display: none;
+  }
+  header h1 {
+    float: left;
+    margin: 32px 0;
+    padding: 10px;
+    width: 80px;
+    height: 46px;
+    background: url("images/logo.png") no-repeat;
+    background-size: 120px;
+  }
+  header h1:after {
+    content: "SpaceDesign";
+    display: inline-block;
+    color: #fff;
+    padding-left: 85px;
+    font-size: 24px;
+    vertical-align: 7px;
+  }
+  nav ul {
+    padding: 5px;
+  }
+  nav li {
+    display: block;
+    padding: 0;
+    text-align: right;
+    padding: 10px;
+  }
+  nav li a {
+    font-size: 20px;
+  }
+  h2 {
+    margin-top: 50px;
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  article p { max-width: 400px; }
+  footer p { 
+    max-width: 400px; 
+    padding: 0 0 20px 0;
+    font-size: 16px;
+  }
+  img { width: 100%; }
+  footer a { margin: 10px; }
+}

@@ -1,0 +1,118 @@
+/*
+  =====
+  CSS Reset
+  ====
+*/
+
+/*
+----------------------------------------
+Tantek Celik's Whitepsace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of common browsers to a common base
+----------------------------------------
+*/
+
+ul,ol { list-style: none; }
+h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+a img,:link img,:visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main { display: block; }
+mark {
+  color: inherit;
+  background: transparent; }
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+/* 
+  =====
+  Layout
+  =====
+*/
+
+body {
+  font: normal 18px 'Roboto Condensed', sans-serif;
+  color: #3e606f;
+  background-image: linear-gradient(to bottom, #d1dbbd, #fcfff5);
+  background-repeat: no-repeat;
+}
+
+header, main, footer {
+  box-sizing: border-box;
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+header {
+  padding: 20px 20px 0 20px;
+}
+
+h1 {
+  float: left;
+  padding: 45px 0 20px 110px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: normal;
+  color: #193441;
+  background: url("logo.png") 0 0 no-repeat;
+}
+
+nav {
+  float: right;
+  padding: 75px 0 0 0;
+}
+
+li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 10px 40px 14px 40px;
+  color: #91aa9d;
+  text-decoration: none;
+  background: #fcfff5;
+  border-radius: 10px 10px 0 0;
+}
+
+nav a.active {
+  background: #91aa9d;
+  color: #fcfff5;
+}
+
+main {
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px 30px 50px 30px;
+  margin-bottom: 15px;
+  box-shadow: 0px 5px 5px #b5b5b5;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: normal;
+  padding-bottom: 25px;
+}
+
+main img.context {
+  float: right;
+  padding-left: 40px;
+}
+
+main img.masthead {
+  margin-bottom: 40px;
+}
+
+p {
+  padding-bottom: 25px;
+}
+
+footer {
+  font-size: 14px;
+}
+

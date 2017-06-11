@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS: Fundamentals</title>
+    <script>
+    function pop(array) {
+      if (array.length < 1) {
+        return undefined;
+      }
+
+      var popped = array[array.length - 1];
+
+      array.length = array.length - 1;
+
+      return popped;
+    }
+
+    function push(array) {
+      for (var i = 1; i < arguments.length; i += 1) {
+        array[array.length] = arguments[i];
+      }
+
+      return array.length;
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

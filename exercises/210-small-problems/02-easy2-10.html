@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // What Century is That
+
+    function century(year) {
+      var centuryNumber = Math.floor(year / 100) + 1;
+      if (year % 100 === 0) {
+        centuryNumber -= 1;
+      }
+
+      return suffix(centuryNumber);
+    }
+
+    function suffix(number) {
+      var suffix = 'th';
+
+      if ([11, 12, 13].includes(number % 100)) {
+      } else {
+        if (number % 10 === 1) {
+          suffix = 'st';
+        } else if (number % 10 === 2) {
+          suffix = 'nd';
+        } else if (number % 10 === 3) {
+          suffix = 'rd';
+        }
+      }
+
+      return number.toString() + suffix;
+    }
+
+    console.log(century(2000));        // '20th'
+    console.log(century(2001));        // '21st'
+    console.log(century(1965));        // '20th'
+    console.log(century(256));         // '3rd'
+    console.log(century(5));           // '1st'
+    console.log(century(10103));       // '102nd'
+    console.log(century(1052));        // '11th'
+    console.log(century(1127));        // '12th'
+    console.log(century(11201));       // '113th'
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

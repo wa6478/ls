@@ -1,0 +1,133 @@
+h1, h2, p, dl, dd, body {
+  margin: 0;
+}
+
+body {
+  font: normal 28px/44px Helvetica, Arial, sans-serif;
+}
+
+main {
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid #000;
+  width: 684px;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+section {
+  border-top: 30px solid #000;
+  border-bottom: 30px solid #000;
+}
+
+div {
+  border-bottom: 10px solid #000;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+dl, h2 {
+  border-bottom: 1px solid #000;
+}
+
+section > div + h2 {
+  text-align: right;
+}
+
+section > dl > dt,
+div > dl:first-child > dt,
+dd ~ dd {
+  font-weight: bold;
+}
+
+section > div > dl {
+  border: none;
+}
+
+dl.sub {
+  margin-left: 40px;
+}
+
+dl.sub dt {
+  font-weight: normal;
+}
+
+section > h2 span {
+  font-variant-position: super;
+}
+
+section > dl span {
+  font-style: italic;
+}
+
+dt, 
+dd, 
+div > dl {
+  display: inline-block;
+}
+
+dd {
+  padding-left: 0.3em;
+}
+
+main > dl > dd,
+div > dl:last-child,
+dd ~ dd {
+  float: right;
+}
+
+sup {
+  vertical-align: 3px;
+}
+
+main > p {
+  line-height: 38px;
+}
+
+aside p {
+  font-size: 26px;
+  line-height: 28px;
+  margin: 15px 23px;
+}
+
+aside p:before {
+  content: "\002A";
+  display: block;
+  float: left;
+  margin: 0 -17px;
+}
+
+table th, td {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 28px;
+  text-align: left;
+}
+
+table td,
+table thead th {
+  padding-left: 44px;
+}
+
+table th.sub {
+  text-indent: 38px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead {
+  border-bottom: 1px solid #000;
+}
+
+table tbody tr:first-child td,
+table tbody tr:first-child th {
+  padding-top: 6px;
+}

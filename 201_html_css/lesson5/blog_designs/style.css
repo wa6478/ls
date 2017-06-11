@@ -1,0 +1,282 @@
+@import url("whitespace-reset.css");
+
+/* General */
+
+body {
+  font: normal 20px Helvetica, Arial, sans-serif;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+header {
+  background: #3d3d3d;
+  padding: 130px 0 50px 0;
+  box-sizing: border-box;
+}
+
+h1 img {
+  display: block;
+  margin: 0 auto;
+  padding: 50px 0 133px 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 68px;
+  font-weight: bold;
+  letter-spacing: 22px;
+}
+
+header a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header a.active {
+  color: #50c3af;
+}
+
+header ul {
+  text-align: center;
+}
+
+header li {
+  display: inline-block;
+  margin: 0 25px;
+}
+
+/* Main */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 85px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 20px;
+}
+
+main div.posts {
+  float: left;
+  width: 77%;
+  padding-right: 110px;
+  box-sizing: border-box;
+  color: #45494d;
+  overflow: hidden;
+}
+
+main article p {
+  text-align: justify;
+}
+
+main article h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+main article h2 + p {
+  margin-bottom: 35px;
+}
+
+main article {
+  margin-bottom: 100px;
+}
+
+main a {
+  color: #50c3af;
+}
+
+div.post_nav a,
+input[type="submit"] {
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  width: 85px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 13px 13px 13px 13px;
+  background: #d2d5da;
+  text-align: center;
+  margin-right: 24px;
+}
+
+div.post_nav a ~ a,
+input[type="submit"] {
+  background: #50c3af;
+}
+
+input[type="submit"] {
+  border: none;
+}
+
+div.comment figure {
+  height: 40px;
+  line-height: 40px;
+  padding-bottom: 10px;
+}
+
+div.comment figcaption {
+  display: inline-block;
+  vertical-align: 30%;
+}
+div.comment img {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 90px;
+}
+
+div.comment {
+  padding-bottom: 40px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  display: block;
+  width: 100% ;
+  margin-bottom: 20px;
+  height: 40px;
+  padding: 0 0 0 15px;
+  font-size: 16px;
+  font-weight: normal;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+textarea {
+  padding-top: 12px;
+  height: 140px;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9a9a9a;
+}
+
+article.post_comment {
+  margin: 0;
+}
+/* Aside */
+
+aside {
+  background: #f6f7f8;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #787b80;
+  padding: 40px;
+  text-align: justify;
+}
+
+aside h3 {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #384048;
+  margin-bottom: 35px;
+}
+
+aside ul {
+  margin-bottom: 100px;
+}
+
+aside li a {
+  color: #787b80;
+}
+
+aside li {
+  padding-left: 25px;
+  margin-bottom: 8px;
+  background: url("images/bullet.png") no-repeat;
+}
+
+/* Footer */
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #7e8287;
+  font-size: 12px;
+  margin-bottom: 60px;
+}
+
+/* media queries */
+
+@media (max-width: 768px) {
+  header {
+    padding: 40px 0 20px 0;
+  }
+  header h1 {
+    font-size: 48px;
+  }
+  main article h2 {
+    font-size: 24px;
+  }
+  main article {
+    margin-bottom: 70px;
+  }
+  main div.posts {
+    width: 74%;
+  }
+}
+
+@media (max-width: 600px) {
+  main div.posts {
+    float: none;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+  }
+
+  header h1 img {
+    width: 80%;
+    padding-bottom: 30px;
+  }
+
+  aside section ul {
+    margin: 0;
+  }
+
+  aside section {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (max-width: 480px) {
+  aside section {
+    width: auto;
+    float: none;
+    background: #f6f7f8;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  aside {
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+  }
+
+  header nav ul {
+    font-size: 0;
+  }
+
+  header nav li {
+    width: 50%;
+    margin: 0;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+}
+
