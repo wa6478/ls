@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice Problems: Strings</title>
+    <script>
+    // 13
+
+    // Create a variable named pi and set it to the result of 22 / 7. Convert pi to a String using the toString method. Search the resulting string for the final occurrence of '14', and log its index position.
+
+    var pi = 22 / 7;
+
+    console.log(pi.toString().lastIndexOf('14'));
+
+    // 14
+    // Create a variable named boxNumber and set it to the result of 356.toString(), and log the result. Before moving on, try to run your program.
+
+    var boxNumber = 356..toString(); // can avoid error with '..'
+
+    console.log(boxNumber);
+
+    //  If you can call toString on a variable that contains a number, why can't you call it directly on a number? JavaScript interprets the period immediately after a number as a decimal point, not a method separator.
+
+    boxNumber = (247).toString();
+    console.log(boxNumber);
+
+    // 15
+    // Convert the boxNumber variable back to a number using parseInt. To make sure the result is a number, you can log typeof boxNumber to verify the type of the result. Now convert the number back to a String by using the String() function and log the typeof of the result to verify it is now a String.
+
+    boxNumber = parseInt(boxNumber, 10);
+    console.log(boxNumber);
+    boxNumber = String(boxNumber);
+    console.log(typeof boxNumber);
+
+   
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

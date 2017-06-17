@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Processing</title>
+    <script>
+    // Total Square Area
+    var rectangles = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
+
+    // function totalArea(array) {
+    //   var total = 0;
+
+    //   array.forEach(function(element) {
+    //     var area = element.reduce(function(sum, element) {
+    //       return sum * element;
+    //     })
+
+    //     total += area;
+    //   })
+
+    //   return total;
+    // }
+
+    function totalArea(rectangles) {
+      var areas = rectangles.map(function(rectangle) {
+        return rectangle[0] * rectangle[1];
+      });
+
+      return areas.reduce(function(sum, area) {
+        return sum + area;
+      }); 
+    }
+
+    console.log(totalArea(rectangles));
+
+    // function totalSquareArea(rectangles) {
+    //   var squares = [];
+
+    //   rectangles.forEach(function(rectangle) {
+    //     if (rectangle[0] === rectangle[1]) {
+    //       squares.push(rectangle);
+    //     }
+    //   });
+
+    //   return totalArea(squares);
+    // }
+
+    function totalSquareArea(rectangles) {
+      var squares = rectangles.filter(function(rectangle) {
+        return rectangle[0] === rectangle[1];
+      });
+
+      return totalArea(squares);
+    }
+
+    console.log(totalSquareArea(rectangles));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

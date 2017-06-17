@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice Problems: Strings</title>
+    <script>
+    // 16
+    // Write a program that asks for a user's name, then greets the user with that name. If the user appends a ! to his name (e.g., Bill!), the computer should "yell" its greeting: that is, it should log everything to the console in uppercase. You can check whether the name ends with a ! with String.prototype.endsWith(). You can remove the ! from the user's name with String.prototype.slice().
+
+    var username = prompt('Username:');
+
+    if (username.endsWith('!')) {
+      console.log('HELLO ' + username.toUpperCase().slice(0, -1) + '. WHY ARE WE SCREAMING?' );
+    } else {
+      console.log('Hello ' + username + '.');
+    }
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

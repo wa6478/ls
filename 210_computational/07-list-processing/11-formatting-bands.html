@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Processing</title>
+    <script>
+    // Formatting Bands
+
+    var bands = [
+      { name: 'sunset rubdown', country: 'UK', active: false },
+      { name: 'women', country: 'Germany', active: false },
+      { name: 'a silver mt. zion', country: 'Spain', active: true },
+    ];
+
+    // function processBands(bands) {
+    //   return bands.map(function(band) {
+    //     return {
+    //       name: capitalizeNoDots(band.name),
+    //       country: 'Canada',
+    //       active: band.active,
+    //     };
+    //   });
+    // }
+
+    // function capitalizeNoDots(bandName) {
+    //   var output = bandName.replace(/\./g, '');
+    //   return output.split(' ').map(function(word) {
+    //     return word[0].toUpperCase() + word.slice(1);
+    //   }).join(' ');
+    // }
+
+    function processBands(bands) {
+      return bands.map(function(band) {
+        updateCountry(band);
+        capitalizeName(band);
+        removeDotsFromName(band);
+        return band;
+      });
+    }
+
+    function updateCountry(band) {
+      band.country = "Canada";
+    }
+
+    function capitalizeName(band) {
+      band.name = capitalizeString(band.name);
+    }
+
+    function capitalizeString(string) {
+      return string.split(' ').map(function(word) {
+        return word[0].toUpperCase() + word.slice(1)
+      }).join(' ');
+    }
+
+    function removeDotsFromName(band) {
+      band.name = band.name.replace(/\./g, '');
+    }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

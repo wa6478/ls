@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A General Problem Solving Approach</title>
+    <script>
+    // Diamonds
+
+    // Write a function that displays a 4-pointed diamond in an nxn grid, where n is an odd integer supplied as an argument to the function. You may assume that the argument will always be an odd integer.
+
+    // diamond(1);
+    // logs
+    // *
+    // diamond(3);
+    // // logs
+    //  *
+    // ***
+    //  *
+    // diamond(9);
+    // // logs
+    //     *
+    //    ***
+    //   *****
+    //  *******
+    // *********
+    //  *******
+    //   *****
+    //    ***
+    //     *
+
+    // print to the console a diamond
+    // each line represents a chunk of the diamond
+    // each line increases in width by 2 up to the maximum with (provided as argument to the function)
+    //
+    // each line concatenate width - stars for the row / 2 + stars + adjusted with again
+    // count up from 1 to max width, then down
+
+
+
+    function diamond(width) {
+      for (var stars = 1; stars <= width; stars += 2) {
+        console.log(row(stars, width));
+      }
+
+      for (var stars = width - 2; stars >= 1; stars -= 2) {
+        console.log(row(stars, width));
+      }
+    }
+
+    function row(stars, maxWidth) {
+      var padding = ' '.repeat(maxWidth - stars / 2);
+      var starRow = '*'.repeat(stars);
+      return padding + starRow + padding;
+    }
+
+    diamond(1);
+    diamond(3);
+    diamond(9);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

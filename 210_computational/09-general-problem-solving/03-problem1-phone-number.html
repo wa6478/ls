@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A General Problem Solving Approach</title>
+    <script>
+    // Phone Number
+
+    // clean up number that may also contain non digit chars that should be ignored ( ,-,.,(0), etc.)
+
+    // input number string
+    // output cleaned up number string
+
+    // less than 10 digits = bad
+    // more than 11 digits = bad
+    // if 10 digits = good
+    // if 11 digits and first num is 1, trim 1 and use rest
+    // if 11 digits and first num not 1, bad num
+    // bad number is a string of 10 0's
+
+    // considerations:
+    // strip string of any non-number characters
+    // guard clauses against bad inputs/obvious invalid inputs
+    // - too long
+    // - too short
+    // - 11 and doesn't start with 1
+    // if 11 chars slice all but first num
+    // if 10 chars just return the string
+
+    // cleaning up input
+    // create new string and iterate through input only adding valid numbers to the new string
+    // use replace on anything other than what I'm looking for
+
+    function cleanNumber(numberString) {
+      var number = numberString.replace(/[^\d]/g, '');
+      var length = number.length;
+
+      if (length < 10 || length > 11 || (length === 11 && number[0] !== '1')) {
+        return '0000000000';
+      }
+
+      if (length === 11) {
+        return number.slice(1);
+      }
+
+      return number;
+    }
+
+
+    console.log(cleanNumber('5435435434')); // 5435435434
+    console.log(cleanNumber('(543) 543-5434')); // 5435435434 symbols
+    console.log(cleanNumber('543.543.5434')); // 5435435434 symbols 2
+    console.log(cleanNumber('123456789')); // 0000000000 fewer than 10 digits
+    console.log(cleanNumber('1234567891011')); // 0000000000 more than 11 digits
+    console.log(cleanNumber('15435435434')); // 5435435434 11 digits starting with 1
+    console.log(cleanNumber('95435435434')); // 0000000000 11 digits starting with not a 1
+
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

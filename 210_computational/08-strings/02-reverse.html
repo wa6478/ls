@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice Problems: Strings</title>
+    <script>
+    // Reverse a String
+
+    // Implement a function that takes a string as an argument and returns a new string that contains the original string in reverse.
+
+    // Iterating with array
+
+    function reverse(string) {
+      var letters = string.split('');
+      var output = []
+
+      letters.forEach(function(letter) {
+        output.unshift(letter);
+      });
+
+      return output.join('');
+    }
+
+    // Using array functions
+
+    function reverse(string) {
+      return string.split('').reverse().join('');
+    }
+
+    // iterating through string
+
+    function reverse(string) {
+      var output = '';
+
+      for (var i = 0; i < string.length; i++) {
+        output = string[i] + output;
+      }
+
+      return output;
+    }
+
+    console.log(reverse('hello'));               // returns "olleh"
+    console.log(reverse('The quick brown fox')); // returns "xof nworb kciuq ehT"
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

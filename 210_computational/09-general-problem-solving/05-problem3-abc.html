@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A General Problem Solving Approach</title>
+    <script>
+    // Now I Know My ABCs
+
+    // A collection of spelling blocks has two letters per block, as shown in this list:
+
+// B:O   X:K   D:Q   C:P   N:A
+// G:T   R:E   F:S   J:W   H:U
+// V:I   L:Y   Z:M
+// This limits the words you can spell with the blocks to just those words that do not use both letters from any given block. You can also only use each block once.
+
+// Write a function that takes a word as a string, and returns true if it can spell the argument passed in from the set of blocks, false otherwise. You can consider the letters to be case insensitive when you apply the rules.
+
+
+// input: string, output: boolean
+
+// data structure
+// letterblocks - object with a 'used' property
+// array of arrays? (would need to find a way to keep track of what was used)
+
+// algo:
+// return false if string is empty or has non-letter chars (use regex match)
+// declare and assign blocks as an array of objects, the pair as an array and a used state
+// iterate through each letter and check the object for the letter (only for objects that have not been used) -- if it's not able to be found, return false
+// can use filter during each iteration to only return unused blocks
+
+// B:O   X:K   D:Q   C:P   N:A
+// G:T   R:E   F:S   J:W   H:U
+// V:I   L:Y   Z:M
+
+function isBlockWord(word) {
+  if (word === '' || word.match(/[^a-z]/i)) {
+    return false;
+  }
+
+  var blocks = [
+    {letters: 'BO', used: false},
+    {letters: 'XK', used: false},
+    {letters: 'DQ', used: false},
+    {letters: 'CP', used: false},
+    {letters: 'NA', used: false},
+    {letters: 'GT', used: false},
+    {letters: 'RE', used: false},
+    {letters: 'FS', used: false},
+    {letters: 'JW', used: false},
+    {letters: 'HU', used: false},
+    {letters: 'VI', used: false},
+    {letters: 'LY', used: false},
+    {letters: 'ZM', used: false},
+  ];
+
+  var letters = word.split('');
+  var found = true;
+
+  letters.forEach(function(letter) {
+    var foundInBlock = false;
+
+    letter = letter.toUpperCase();
+
+    blocks = blocks.filter(function(block) {
+      return block.used === false;
+    });
+
+    blocks.forEach(function(block) {
+      if (block.letters.indexOf(letter) >= 0) {
+        block.used = true;
+        foundInBlock = true;
+      }
+    });
+
+    if (!foundInBlock) {
+      found = false;
+    }
+  });
+
+  return found;
+}
+
+// Examples:
+
+console.log(isBlockWord('BATCH')); // true
+console.log(isBlockWord('BUTCH')); // false
+console.log(isBlockWord('jest'));  // true
+console.log(isBlockWord('')); // false
+console.log(isBlockWord('!BET')); // false
+console.log(isBlockWord('BET')); // true
+console.log(isBlockWord('BeT')); // true
+console.log(isBlockWord('BOT')); // false
+console.log(isBlockWord('BATCH')); // true
+console.log(isBlockWord('BUTCH')); // false
+console.log(isBlockWord('jest'));  // true
+console.log(isBlockWord('floW'));  // true
+console.log(isBlockWord('APPLE')); // false
+console.log(isBlockWord('apple')); // false
+console.log(isBlockWord('apPLE')); // false
+console.log(isBlockWord('Box'));   // false
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

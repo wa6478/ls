@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice Problems: Strings</title>
+    <script src="07-email_data_v2.js"></script>
+    <script>
+    // Mail Count
+
+    function mailCount(emailData) {
+      var emails = emailData.split('##||##');
+      var dates = emailData.match(/\#\s?Date.{12}/g).map(function(date) {
+          return toDate(date.slice(-10));
+      }).sort(function(a, b) { return b - a;});
+      var mostRecent = dates[0];
+      var oldest = dates[dates.length - 1];
+
+      console.log('Count of Email: ' + emails.length);
+      console.log('Date Range: ' + dateString(oldest) + ' - ' + dateString(mostRecent));
+    }
+
+    function toDate(dateString) {
+      var year = Number(dateString.slice(-4));
+      var month = Number(dateString.slice(0, 2));
+      var date = Number(dateString.slice(3, 5));
+
+      return new Date(year, month - 1, date);
+    }
+
+    function dateString(dateObject) {
+      var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      var day = days[dateObject.getDay()];
+      var month = months[dateObject.getMonth()];
+      var date = dateObject.getDate();
+      var year = dateObject.getFullYear();
+      var dateElements = [day, month, date, year];
+
+      return dateElements.join(' ');
+    }
+
+    mailCount(emailData);
+
+    // console.output
+    // Count of Email: 5
+    // Date Range: Sat Jun 25 2016 - Thu Aug 11 2016
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A General Problem Solving Approach</title>
+      <script>
+// Rail Fence Cipher
+
+// Implement encoding and decoding for the rail fence cipher.
+
+// The Rail Fence cipher is a form of transposition cipher that gets its name from the way in which it's encoded. It was already used by the ancient Greeks.
+
+// In the Rail Fence cipher, the message is written downwards on successive "rails" of an imaginary fence, then moving up when we get to the bottom (like a zig-zag). Finally the message is then read off in rows.
+
+// For example, using three "rails" and the message "WE ARE DISCOVERED FLEE AT ONCE", the cipherer writes out:
+
+// W . . . E . . . C . . . R . . . L . . . T . . . E
+// . E . R . D . S . O . E . E . F . E . A . O . C .
+// . . A . . . I . . . V . . . D . . . E . . . N . .
+// Then reads off:
+
+// WECRLTEERDSOEEFEAOCAIVDEN
+
+// obs/reqs:
+// two functions: one to encode, one to decode
+// would need the string to either encode or decode and the height of the rail
+// for encoding
+// would need to 'build the fence', then read the letters in each line
+// case sensitive? assume yes
+// empty string?
+
+// encode
+// data structure
+// - array for each row (can use length to figure out how much spacing to add)
+// - number of arrays needed equal to the number of rails on the fence
+
+// algo
+// - clean up input string (remove all non alphanum chars)
+// - create an array of arrays equal to the number of rails (this will be the fence)
+// - set a current rail iterator that keeps track of which rail last added to
+// - set a top bound (first rail) and bottom bound (last rail), so when the rail iterator reaches the bound, it will get incremented/decremented the other way
+// - keep an iterator for the next rail so we can pad it in advance
+// - iterate through the string
+// - add the letter to the current rail
+// - pad the next rail with as many '.'s to be equal in length to current rail
+// - determine the following rail with current and next --> helper
+// -  need current and next rail as params
+// -  if current rail < next rail (current rail is above next)
+// -    check if next rail + 1 > bottom bound
+// -      return next rail - 1
+// -    else return next rail + 1
+// -  if current rail > next rail (current rail is under next)
+// -    check if next rail - 1 < top bound
+// -      return next rail + 1
+// -    else return next rail - 1
+// - set current rail to next rail
+// - set next rail to following rail
+// once done iterating
+// - join all the arrays in order
+// - replace all '.' with ''
+// - return that as output
+
+function encode(message, rails) {
+  var message = message.replace(/[^a-z0-9]/gi, '');
+  var encodedResult = [];
+  var fence;
+
+  if (rails < 2) {
+    return message;
+  } 
+
+  fence = buildFence(message, rails);
+
+  for (var i = 0; i < fence.length; i++) {
+    encodedResult.push(cleanRail(fence[i]));
+  }
+
+  return encodedResult.join('')
+}
+
+function cleanRail(rail) {
+  return rail.join('').replace(/\./g, '');
+}
+
+function buildFence(message, rails) {
+  var fence = [];
+  var currentRail = 0;
+  var nextRail = 1;
+  var followingRail;
+  var topRail = 0;
+  var bottomRail = rails - 1;
+
+  for (var i = 0; i < rails; i++) {
+    fence.push([]);
+  }
+
+  for (var j = 0; j < message.length; j++) {
+    fence[currentRail].push(message[j]);
+    padRail(fence[nextRail], fence[currentRail].length);
+    followingRail = railToFollow(currentRail, nextRail, topRail, bottomRail);
+    currentRail = nextRail;
+    nextRail = followingRail;
+  }
+
+  return fence;
+}
+
+function padRail(rail, length) {
+  while (rail.length < length) {
+    rail.push('.');
+  }
+  return rail;
+}
+
+function railToFollow(current, next, top, bottom) {
+  if (current < next) {
+    if (next + 1 > bottom) {
+      return next - 1;
+    } else {
+      return next + 1;
+    }
+  } else if (current > next) {
+    if (next - 1 < top) {
+      return next + 1;
+    } else {
+      return next - 1;
+    }
+  }
+}
+
+console.log(encode('WE ARE DISCOVERED FLEE AT ONCE', 3)); // 'WECRLTEERDSOEEFEAOCAIVDEN'
+console.log(encode('Hello', 1)); // 'Hello'
+console.log(encode('Hello', 2)); // 'Hloel'
+// H.l.o
+// .e.l.
+console.log(encode('Hello', 3)); // 'Hoell'
+// H...o
+// .e.l.
+// ..l..
+console.log(encode('Hello', 4)); // 'Helol'
+// H....
+// .e...
+// ..l.o
+// ...l.
+console.log(encode('Hello how are you', 4)); // 'Hooehwyuloaelr'
+// H.....o.....o.
+// .e...h.w...y.u
+// ..l.o...a.e...
+// ...l.....r....
+
+// decode
+// obs/reqs
+// could use the rail generation piece of encode to populate the different rails and check the length to figure out the length of the letter sequences I need to apply across
+// for example, if we populate the rails with 'Helol' we will get a first rail of length 1, second of length 1, third of length 2, etc. which allows me to slice my input string appropriately
+// once the rails have been generated, can replace the letters in each row with those from the string
+// now the fence will be in the original shape
+// then just need to remove all the empty space and use my moving up and down method from the encode to populate an output string
+
+// algo
+// - use the fencebuilder logic from the encode to build the fence using the input string
+// - strip the '.' from each rail
+// - create an output string
+// - while output string is shorter than input string
+//   - use the up and down methodology from encode to add letters to the output
+// return output
+
+function decode(encodedMessage, rails) {
+  if (rails < 2) {
+    return encodedMessage;
+  }
+
+  var message = encodedMessage;
+
+  var fence = buildFence(message, rails);
+  var cleanedFence = fence.map(function(rail) {
+    rail = cleanRail(rail);
+    rail = message.slice(0, rail.length);
+    message = message.slice(rail.length);
+    return rail.split('');
+  })
+
+  var output = '';
+  var currentRail = 0;
+  var nextRail = 1;
+  var followingRail;
+  var topRail = 0;
+  var bottomRail = rails - 1;
+
+  while (output.length < encodedMessage.length) {
+    output += cleanedFence[currentRail].shift();
+    followingRail = railToFollow(currentRail, nextRail, topRail, bottomRail);
+    currentRail = nextRail;
+    nextRail = followingRail;
+  }
+
+  return output;
+}
+
+
+console.log(decode('Helol', 4)); // 'Hello'
+// X.....X.....X    0 6     12
+// .X...X.X...X     1 5  7  11
+// ..X.X...X.X      2 4  
+// ...X.....X       3
+// 'H' 'e' 'lo' 'l'
+
+console.log(decode('Hooehwyuloaelr', 4)); // 'Hello how are you'
+// As if i was going to encode
+// H.....y.....l   -> 3 -> 'Hoo'   H.....o.....o 
+// .o...w.u...e.r  -> 5 -> 'ehwyu' .e...h.w...y.u
+// ..o.h...l.a     -> 4 -> 'loae'  ..l.o...a.e
+// ...e.....o      -> 2 -> 'lr'    ...l.....r
+
+console.log(decode('', 5)); // ''
+console.log(decode('Hi', 1)); // ''
+
+
+
+
+// To decrypt a message you take the zig-zag shape and fill the ciphertext along the rows.
+
+// ? . . . ? . . . ? . . . ? . . . ? . . . ? . . . ?
+// . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? .
+// . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
+// The first row has seven spots that can be filled with "WECRLTE".
+
+// W . . . E . . . C . . . R . . . L . . . T . . . E
+// . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? .
+// . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
+// Now the 2nd row takes "ERDSOEEFEAOC".
+
+// W . . . E . . . C . . . R . . . L . . . T . . . E
+// . E . R . D . S . O . E . E . F . E . A . O . C .
+// . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
+// Leaving "AIVDEN" for the last row.
+
+// W . . . E . . . C . . . R . . . L . . . T . . . E
+// . E . R . D . S . O . E . E . F . E . A . O . C .
+// . . A . . . I . . . V . . . D . . . E . . . N . .
+// If you now read along the zig-zag shape you can read the original message.
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

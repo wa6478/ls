@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Processing</title>
+    <script>
+    // Total Square Area
+    var rectangles = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
+
+    function totalArea(array) {
+      var total = 0;
+
+      array.forEach(function(element) {
+        var area = element.reduce(function(sum, element) {
+          return sum * element;
+        })
+
+        total += area;
+      })
+
+      return total;
+    }
+
+    console.log(totalArea(rectangles));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

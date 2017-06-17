@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Processing</title>
+    <script>
+    // var count = [1, 2, 3, 4, 5];
+    // var filtered = count.filter(function(number, index, array) {
+    //   return number % 2 === 0;
+    // });
+
+    // console.log(filtered);
+
+    function myFilter(array, func) {
+      var output = [];
+
+      array.forEach(function(element) {
+        if (func(element)) {
+          output.push(element);
+        }
+      });
+
+      return output;
+    }
+
+    var isPythagoreanTriple = function(triple) {
+      return Math.pow(triple.a, 2) + Math.pow(triple.b, 2) === Math.pow(triple.c, 2);
+    }
+
+    myFilter([{a: 3, b: 4, c: 5}, {a: 5, b: 12, c: 13}, {a: 1, b: 2, c: 3}], isPythagoreanTriple);
+
+    // returns [{a: 3, b: 4, c: 5}, {a: 5, b: 12, c: 13}]
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

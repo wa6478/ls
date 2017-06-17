@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice Problems: Strings</title>
+    <script>
+    // 8
+
+    // Create two variables, a = 'a' and b = 'b'. Log a "greater than" comparison between the two variables. Reassign the value B to variable b, then compare the two variables again, and log the comparison value.
+
+    var a = 'a';
+    var b = 'b';
+
+    console.log(a > b);
+
+    b = 'B';
+
+    console.log(a > b);
+
+    // 9 
+
+    // Create variables aIndex and vIndex and store the index of the first occurrences of letters 'a' and 'v' in the language string. Call the substr method on language with aIndex as the first argument, and 4 as the second argument, e.g., language.substr(aIndex, 4). Log the return value. Repeat the operation using vIndex as the first argument.
+
+    var language = 'JavaScript';
+
+    var aIndex = language.indexOf('a');
+    var vIndex = language.indexOf('v');
+
+    console.log(language.substr(aIndex, 4));
+    console.log(language.substr(vIndex, 4));
+
+    // 10
+    // Repeat the previous problem, but this time use substring instead of substr. Note how the results differ because of the different ways these methods interpret the second argument:
+
+    console.log(language.substring(aIndex, 4));
+    console.log(language.substring(vIndex, 4));
+
+    // 11
+    // Create variables named fact1 and fact2 and set them equal to 'JavaScript is fun' and 'Kids like it too', respectively. Combine the values of the two variables with the string ' and ' between them, and store the result in a variable named compoundSentence. Make sure the first letter of fact2 shows up as lowercase in compoundSentence. Log the value of compoundSentence.
+
+    var fact1 = 'JavaScript is fun';
+    var fact2 = 'Kids like it too';
+
+    var compoundSentence = fact1 + ' and ' + fact2[0].toLowerCase() + fact2.slice(1);
+
+    console.log(compoundSentence);
+
+    // 12
+    // Log the first letter of fact1 and fact2 using bracket notation.
+
+    console.log(fact1[0]);
+    console.log(fact2[0]);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
