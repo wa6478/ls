@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Combining Arrays
+
+// Write a function that takes two Arrays as arguments, and returns an Array that contains the union of the values from the two. There should be no duplication of values in the returned Array, even if there are duplicates in the original Arrays. You may assume that the arguments will be Arrays only.
+
+// assuming numbers don't need to be sorted
+// set output equal to first array
+// iterate through second array only pushing it to output if it isn't already in the output
+
+function union(arr1, arr2) {
+  var output = arr1.slice();
+
+  arr2.forEach(function(element) {
+    if (output.indexOf(element) < 0) {
+      output.push(element);
+    }
+  });
+
+  return output;
+}
+
+// Example
+
+console.log(union([1, 3, 5], [3, 6, 9])); // [1, 3, 5, 6, 9]
+console.log(union([1, 3, 5, 10], [3, 6, 9, 10, 11, 12])); // [1, 3, 5, 10, 6, 9, 11, 12]
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

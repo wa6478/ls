@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+
+// Running Totals
+
+// Write a function that takes an array of numbers, and returns an array with the same number of elements with each elements value being running total from the original array.
+
+// input: array
+// output: array
+// iterate through input array
+// slice through to the current index
+// reduce that array to get its sum
+// push that sum into output array
+// return output
+
+function runningTotal(numbers) {
+  var output = [];
+  var subarray;
+
+  for (var i = 0; i < numbers.length; i++) {
+    subarray = numbers.slice(0, i + 1);
+    output.push(subarray.reduce(function(sum, num) { 
+      return sum + num; 
+    }));
+  }
+
+  return output;
+}
+
+// with map
+// would return the running sum plus the current element with each iteration of map
+
+function runningTotal(numbers) {
+  var sum = 0;
+  var totaledNumbers = numbers.map(function(element) {
+    sum += element;
+    return sum;
+  });
+
+  return totaledNumbers;
+}
+
+// Examples:
+
+console.log(runningTotal([2, 5, 13]));             // [2, 7, 20]
+console.log(runningTotal([14, 11, 7, 15, 20]));    // [14, 25, 32, 47, 67]
+console.log(runningTotal([3]));                    // [3]
+console.log(runningTotal([]));                     // []
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

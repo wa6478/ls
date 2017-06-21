@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Triangle Sides
+
+// A triangle is classified as follows:
+
+// Equilateral: All 3 sides are of equal length
+// Isosceles: 2 sides are of equal length, while the 3rd is different
+// Scalene: All 3 sides are of different length
+// To be a valid triangle, the sum of the lengths of the two shortest sides must be greater than the length of the longest side, and all sides must have lengths greater than 0. If either of these conditions are not satisfied, the triangle is invalid.
+
+// Write a function that takes the lengths of the 3 sides of a triangle as arguments, and returns a string 'equilateral', 'isosceles', 'scalene', or 'invalid' depending on whether the triangle is equilateral, isosceles, scalene, or invalid.
+
+function triangle(side1, side2, side3) {
+  var sides = [side1, side2, side3].sort();
+
+  if (sides.some(function(side) { return side <= 0; })) {
+    return 'invalid';
+  }
+
+  if (sides[2] > sides[0] + sides[1]) {
+    return 'invalid';
+  }
+
+  if (side1 === side2 && side2 === side3) {
+    return 'equilateral';
+  }
+
+  if (side1 !== side2 && side2 !== side3 && side1 !== side3) {
+    return 'scalene';
+  }
+
+  return 'isosceles';
+}
+
+// Examples:
+
+console.log(triangle(3, 3, 3));   // equilateral
+console.log(triangle(3, 3, 1.5)); // isosceles
+console.log(triangle(3, 4, 5));   // scalene
+console.log(triangle(0, 3, 3));   // invalid
+console.log(triangle(3, 1, 1));   // invalid
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

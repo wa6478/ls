@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Tri-Angles
+
+// A triangle is classified as follows:
+
+// Right: One angle of the triangle is a right angle (90 degrees)
+// Acute: All 3 angles of the triangle are less than 90 degrees
+// Obtuse: One angle is greater than 90 degrees.
+// To be a valid triangle, the sum of the angles must be exactly 180 degrees, and all angles must be greater than 0. If either of these conditions are not satisfied, the triangle is invalid.
+
+// Write a function that takes the 3 angles of a triangle as arguments, and returns a string 'right', 'acute', 'obtuse', or 'invalid' depending on whether the triangle is a right, acute, obtuse, or invalid triangle.
+
+// You may assume integer valued angles so you don't have to worry about floating point errors. You may also assume that the arguments are in degrees.
+
+function triangle(ang1, ang2, ang3) {
+  var angles = [ang1, ang2, ang3];
+
+  if (ang1 + ang2 + ang3 !== 180 || ang1 <= 0 || ang2 <= 0 || ang3 <= 0) {
+    return 'invalid';
+  }
+
+  if (angles.some(function(angle) { return angle === 90; })) {
+    return 'right';
+  }
+
+  if (angles.some(function(angle) { return angle > 90; })) {
+    return 'obtuse';
+  }
+
+  return 'acute';
+}
+
+// Examples:
+
+console.log(triangle(60, 70, 50));   // acute
+console.log(triangle(30, 90, 60));   // right
+console.log(triangle(120, 50, 10));  // obtuse
+console.log(triangle(0, 90, 90));    // invalid
+console.log(triangle(50, 50, 50));   // invalid
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

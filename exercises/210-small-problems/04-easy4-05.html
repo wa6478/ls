@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Multiplicative Average
+
+// Write a function that takes an Array of integers as input, multiplies all of the numbers together, divides the result by the number of entries in the Array, and returns the result as a String with the value rounded to 3 decimal places.
+
+// use reduce to get product / divide by length and use toFixed to format my output as a string with a certain number of decimal values
+
+function showMultiplicativeAverage(numbers) {
+  var product = numbers.reduce(function(product, num) {
+    return product * num;
+  });
+
+  var multiplicativeAverage = product / numbers.length;
+
+  return multiplicativeAverage.toFixed(3);
+}
+
+// Examples
+
+console.log(showMultiplicativeAverage([3, 5]));                 // '7.500'
+console.log(showMultiplicativeAverage([2, 5, 7, 11, 13, 17]));  // '28361.667'
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

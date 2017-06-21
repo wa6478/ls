@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Double Char Part 2
+
+// Write a function that takes a string, and returns a new string in which it doubles every consonant character. It doesn't double vowels (a,e,i,o,u), digits, punctuation, and whitespace.
+
+function doubleConsonants(string) {
+  return string.replace(/([^aeiou\W\d])/gi, '$1$1')
+}
+
+// Examples:
+
+console.log(doubleConsonants('String'));       // "SSttrrinngg"
+console.log(doubleConsonants('Hello-World!')); // "HHellllo-WWorrlldd!"
+console.log(doubleConsonants('July 4th'));     // "JJullyy 4tthh"
+console.log(doubleConsonants(''));             // ""
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

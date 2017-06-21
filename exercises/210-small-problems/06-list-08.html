@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Grocery List
+
+// Write a function which takes a grocery list (array) of fruits with quantities and converts it into an array of the correct number of each fruit.
+
+// iterate through array with map
+// create an empty array
+// for loop push the first elment into new array until it reaches the number count
+// return the new array
+
+function buyFruit(fruits) {
+  var result = [];
+  fruits.forEach(function(fruit) {
+    for (var i = 0; i < fruit[1]; i++) {
+      result.push(fruit[0]);
+    }
+  });
+
+  return result;
+}
+
+
+
+// Example:
+
+console.log(buyFruit([['apples', 3], ['orange', 1], ['bananas', 2]]));
+// result
+// ['apples', 'apples', 'apples', 'orange', 'bananas','bananas']
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Multiply Lists
+
+// Write a function that takes two Array arguments, in which each Array contains a list of numbers, and returns a new Array that contains the product of each pair of numbers from the arguments that have the same index. You may assume that the arguments contain the same number of elements.
+
+function multiplyList(arr1, arr2) {
+  var result = arr1.map(function(num, idx) {
+    return num * arr2[idx];
+  });
+
+  return result;
+}
+
+// Examples:
+
+console.log(multiplyList([3, 5, 7], [9, 10, 11])); // [27, 50, 77]
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

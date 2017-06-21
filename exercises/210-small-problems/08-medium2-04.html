@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Unlucky Days
+
+// Write a function that returns the number of Friday the 13ths in the year passed in as an argument. You may assume that the year is greater than 1752 (when the modern Gregorian Calendar was adopted by the United Kingdom), and you may assume that the same calendar will remain in use for the foreseeable future.
+
+//  in
+//    number representing a year
+//  out
+//    number representing the number of friday the 13ths in that year
+//  reqs / obs
+//    assume calendar is greater than 1752
+
+//  data struct
+//    date object
+//  algo
+//    would need to cycle through all the '13ths' of the year
+//    if that 13th's weekday happens to be a friday, i++
+//    so can create a date object using those parameters
+//      e.g. (2015, 1, 13), (2015, 2, 13)
+//    and get weekday from it
+//    if sunday is 0 then friday is 5
+
+function fridayThe13ths(year) {
+  var count = 0;
+  var testDate;
+
+  for (var i = 0; i < 12; i++) {
+    testDate = new Date(year, i, 13);
+    if (testDate.getDay() === 5) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
+
+// Examples:
+
+console.log(fridayThe13ths(2015)); // 3
+console.log(fridayThe13ths(1986)); // 1
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

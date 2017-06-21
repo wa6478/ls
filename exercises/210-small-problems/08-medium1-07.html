@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Fibonacci Numbers (Procedural)
+
+// In the previous exercise, we developed a recursive solution to calculating the nth Fibonacci number. In a language that is not optimized for recursion, some (not all) recursive functions can be extremely slow and require massive quantities of memory and/or stack space. If you tested for bigger nth numbers, you may have notice that getting the 50th fibonacci number already takes some time.
+
+// Fortunately, every recursive function can be rewritten as a non-recursive (procedural) function.
+
+// Rewrite your recursive fibonacci function so that it computes its results without recursion.
+
+function fibonacci(n) {
+  if (n < 3) {
+    return 1;
+  }
+
+  var first = 1;
+  var second = 1;
+  var fib;
+  var nth = 2;
+
+  while (nth < n) {
+    fib = first + second;
+    first = second;
+    second = fib;
+    nth += 1;
+  }
+
+  return fib;
+}
+
+// Examples:
+
+console.log(fibonacci(20));   // 6765
+console.log(fibonacci(50));   // 12586269025
+console.log(fibonacci(100));  // 354224848179261915075
+console.log(fibonacci(1));   // 1
+console.log(fibonacci(2));   // 1
+console.log(fibonacci(3));   // 2
+console.log(fibonacci(4));   // 3
+console.log(fibonacci(5));   // 5
+console.log(fibonacci(12));  // 144
+console.log(fibonacci(20));  // 6765
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

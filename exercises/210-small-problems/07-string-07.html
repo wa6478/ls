@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Staggered Caps Part 2
+
+// Modify the function from the previous exercise so it ignores non-alphabetic characters when determining whether it should uppercase or lowercase each letter. The non-alphabetic characters are still included in the return value; they just don't count when toggling the desired case.
+
+function staggeredCase(string) {
+  var isUpperCase = true;
+  return string.split('').map(function(char, index) {
+    if (char.match(/[^a-zA-Z]/)) {
+      return char;
+    } else if (isUpperCase) {
+      isUpperCase = false;
+      return char.toUpperCase();
+    } else if (!isUpperCase) {
+      isUpperCase = true;
+      return char.toLowerCase();
+    }
+  }).join('');
+}
+
+// Example:
+
+console.log(staggeredCase('I Love Launch School!'));     // 'I lOvE lAuNcH sChOoL!'
+console.log(staggeredCase('ALL CAPS'));                  // 'AlL cApS'
+console.log(staggeredCase('ignore 77 the 444 numbers')); // 'IgNoRe 77 ThE 444 nUmBeRs'
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

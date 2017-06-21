@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// 1000 Lights
+
+// You have a bank of switches before you, numbered from 1 to n. Each switch is connected to exactly one light that is initially off. You walk down the row of switches, and toggle every one of them. You go back to the beginning, and on this second pass you toggle switches 2, 4, 6, and so on. On the third pass, you go back again to the beginning and toggle switches 3, 6, 9, and so on. You repeat this process and keep going until you have been through n repetitions.
+
+// Write a program that takes one argument, total number of switches, and returns an array of lights that are on after n repetitions.
+
+// Examples
+
+//  in:
+//    integer representing the total number of switches "n"
+//  out:
+//    array with the switch numbers that are connected to a light that is on
+//  req:
+//    switches from 1 to n
+//    all lights are initially off
+//    first pass toggles every switch
+//    second pass toggles every other switch
+//    third pass toggles every third switch
+//    and so on
+//    go through as many passes as there are switches with each pass skipping one more switch than the last pass
+//    return an array with the lights that are on
+
+//    data structure
+//      object where the property is the light number
+//          property value is whether it's on or off
+//      two arrays of equal length
+//          one tracks the light numbers
+//          the second tracks whether or not the lights are on 1 or off 0
+
+//  algo:
+//    create an object with switches that consists of a sequence from 1..n
+//    default state to 'off'
+//    iterate n times over the switches
+//    increasing the inner loops switch by n with each pass of the outer loop
+//    filter the keys for those that have a property value of on
+//    return that array
+
+
+
+
+function lightsOn(switches) {
+  var lights = {}
+  for (var i = 1; i <= switches; i++) {
+    lights[i] = 'off';
+  }
+
+  for (var j = 1; j <= switches; j++) {
+    var numberOfLights = Object.keys(lights).length;
+    for (var k = 0; k < numberOfLights;) {
+      k += j;
+      if (lights[k]) {
+        if (lights[k] === 'off') {
+          lights[k] = 'on';
+        } else {
+          lights[k] = 'off';
+        }
+      }
+    }
+  }
+
+  return Object.keys(lights).filter(function(light) {
+    return lights[light] === 'on';
+  }).map(Number);
+}
+
+console.log(lightsOn(5));   // [1, 4];
+
+// detailed result of each round for 5 lights
+// Round 1: all lights are on // [1, 2, 3, 4, 5]
+// Round 2: lights 2 and 4 are now off; 1, 3, and 5 are on // [1, 3, 5]
+// Round 3: lights 2, 3, and 4 are now off; 1 and 5 are on // [1, 5]
+// Round 4: lights 2 and 3 are now off; 1, 4, and 5 are on // 
+// Round 5: lights 2, 3, and 5 are now off; 1 and 4 are on
+
+console.log(lightsOn(100));  // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

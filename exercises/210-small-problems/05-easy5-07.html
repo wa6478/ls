@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Name Swapping
+
+// Write a function that takes a first name, a space, and a last name passed as a single String argument, and returns a string that contains the last name, a comma, a space, and the first name.
+
+// Examples
+
+// function swapName(name) {
+//   var names = name.split(' ');
+//   if (names.length <= 2) {
+//     return names.reverse().join(', ');
+//   }
+
+//   var lastName = names.slice(-1);
+//   var firstNames = names.slice(0, -1);
+//   return lastName + ', ' + firstNames.join(' ');
+// }
+
+// regex
+
+function swapName(name) {
+  return name.replace(/(.*) (.*)/, '$2, $1');
+}
+
+console.log(swapName('Joe Roberts')); // 'Roberts, Joe'
+console.log(swapName('Joe Swag Roberts')); // 'Roberts, Joe Swag'
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

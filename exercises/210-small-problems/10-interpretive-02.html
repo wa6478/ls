@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Diamonds
+
+// Write a function that displays a 4-pointed diamond in an nxn grid, where n is an odd integer supplied as an argument to the function. You may assume that the argument will always be an odd integer.
+
+
+//  input:
+//    an odd integer
+//  output:
+//    none
+//    side effect of logging strings of characters that create a diamond shape
+//  
+//  reqs/obvs:
+//    the number of diamonds in any row will always be odd
+//    each row increases the number of diamonds by two
+//    up to the longest row which has as many stars as it has rows
+//    thereafter decreases by two for every row
+
+//  data structure
+//    string primitives
+
+//  algo
+//    Use the rounded up half way point as the inflection row
+//    starting with 1 star, iterate up to and including the inflection
+//    increasing the number of stars with each row by 2
+//    padding helper to pad the beginning and end of each row
+//    after inflection point, new iteration that goes down to 1 star
+
+function diamond(max) {
+  var half = Math.ceil(max / 2);
+
+  for (var starsUp = 1; starsUp <= max; starsUp += 2) {
+    console.log(row(starsUp, max));
+  }
+
+  for (var starsDown = max - 2; starsDown >= 1; starsDown -= 2) {
+    console.log(row(starsDown, max));
+  }
+}
+
+function row(stars, max) {
+  var padding = (max - stars) / 2;
+  return ' '.repeat(padding) + '*'.repeat(stars) + ' '.repeat(padding);
+}
+
+
+// Examples
+
+console.log(diamond(1));
+// logs
+// *
+console.log(diamond(3));
+// logs
+//  *
+// ***
+//  *
+console.log(diamond(9));
+// logs
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

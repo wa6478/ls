@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Double Char Part 1
+
+// Write a function that takes a string, and returns a new string in which it doubles every character.
+
+function repeater(string) {
+  var chars = string.split('')
+  return chars.map(function(char) {
+    return char.repeat(2);
+  }).join('');
+}
+
+// regex
+
+function repeater(string) {
+  return string.replace(/(.)/g, '$1$1');
+}
+
+// Examples:
+
+console.log(repeater('Hello'));     // "HHeelllloo"
+console.log(repeater("Good job!")); // "GGoooodd  jjoobb!!"
+console.log(repeater(''));          // ''
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

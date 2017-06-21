@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// // Reverse It Part 2
+
+// Write a function that takes one argument, a string containing one or more words, and returns the given string with all five or more letter words reversed. Each string will consist of only letters and spaces. Include spaces only when more than one word is present.
+
+function reverseWords(string) {  
+  function flipWord(word) {
+    return word.split('').reverse().join('');
+  }
+
+  var words = string.split(' ');
+
+  return words.map(function(word) {
+    if (word.length >= 5) {
+      return flipWord(word);
+    } else {
+      return word;
+    }
+  }).join(' ');
+}
+
+
+
+// Examples:
+
+console.log(reverseWords('Professional'));          // lanoisseforP
+console.log(reverseWords('Walk around the block')); // Walk dnuora the kcolb
+console.log(reverseWords('Launch School'));         // hcnuaL loohcS
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

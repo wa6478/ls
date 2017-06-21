@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// 
+// Sum Square - Square Sum
+
+// Write a function that computes the difference between the square of the sum of the first n positive integers and the sum of the squares of the first n positive integers.
+
+//  input
+//    integer
+//    represents the limit of n positive integers
+//  output
+//    integer
+//    sum of the squares of the first n positive integers
+//  reqs
+//    calculate the square of the sum of first n positive integers
+//        (1 + 2 + 3) ** 2
+//    calculate the sum of the squares of the first n positive integers
+//        (1 ** 2) + (2 ** 2) + (3 ** 2)
+//    return the difference of the former less the latter
+//  algo
+//    populate an array with the range of integers I need
+//    calculate square of sum (square the reduction)
+//    calculate sum of squares (add the squares in the reduction)
+//    return difference
+
+
+
+function sumSquareDifference(limit) {
+  var nums = [];
+  var squareOfSum;
+  var sumOfSquares;
+
+  for (var i = 1; i <= limit; i++) {
+    nums.push(i);
+  }
+
+  squareOfSum = nums.reduce(function(sum, num) {
+    return sum + num;
+  })**2;
+
+  sumOfSquares = nums.reduce(function(sum, num) {
+    return sum + num**2
+  });
+
+  return squareOfSum - sumOfSquares;
+}
+
+// Examples:
+
+console.log(sumSquareDifference(3));    // 22
+// -> (1 + 2 + 3)**2 - (1**2 + 2**2 + 3**2)
+console.log(sumSquareDifference(10));   // 2640
+console.log(sumSquareDifference(1));    // 0
+console.log(sumSquareDifference(100));  // 25164150
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Halvsies
+
+// Write a function that takes an Array as an argument, and returns an array that contains 2 elements, each of which is an Array. Put the first half of the original Array elements in the first element of the return value, and put the second half in the second element. If the original array contains an odd number of elements, place the middle element in the first half Array.
+
+// algo
+// create a holder array that holds the subarrays
+// calculate longer half length using math ceil
+// slice the array by longer half using it as the end index
+// push to the output
+// slice the remainder from the end of the longer half
+// return output
+
+function halvsies(numbers) {
+  var output = [];
+  var half = Math.ceil(numbers.length / 2);
+  output.push(numbers.slice(0, half));
+  output.push(numbers.slice(half));
+  return output;
+}
+
+// Examples:
+
+console.log(halvsies([1, 2, 3, 4]));    // [[1, 2], [3, 4]]
+console.log(halvsies([1, 5, 2, 4, 3])); // [[1, 5, 2], [4, 3]]
+console.log(halvsies([5]));             // [[5], []]
+console.log(halvsies([]));              // [[], []]
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

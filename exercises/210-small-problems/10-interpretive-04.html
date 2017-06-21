@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Caesar Cipher
+
+// Implement the caesar cipher. The caesar cipher is one of the earliest and simplest ways to encrypt plaintext so that passing or communicating a message can be made secure. It is a substitution type of cipher, wherein the characters in a plaintext are substituted by a letter some fixed number of positions in the alphabet. For example the letter A can be right shifted 3 and it will be substituted with the letter D. This shift value is often referred to as the key. If a person has this key value then they can decode the "encrypted plaintext" or ciphertext.
+
+// As one of the earlier ciphers, it only encrypts lower and upper cased letters of the alphabet. Any other character is left as is. Likewise, the substituted letters are only taken from the corresponding letter case. In the event that the key value for shifting exceeds the alphabet capacity, it wraps around.
+
+//  input
+//    string and an integer (key) by which to shift the letters
+//  output
+//    encoded string
+//  reqs
+//    only encrypt lower and upper case letters
+//    leave other chars as is
+//    substituted char will be in corresponding case
+//    if the key value exceeds alphabet capacity, wrap around
+
+//  data structure
+//    2 arrays, one uppercase and one lowercase letters
+//    can use indexOf to figure out what index to pull
+
+//  algo
+//    create a result string
+//    split chars of input
+//    for each char in the chars string
+//    if letter use helper and append return value to result
+//    if neither just concatenate the char to the result
+//    encode helper function that uses the upper/lowercase arrays
+//      look up the index of the char in the array 
+//      add the key to the index
+//      % 26 will be used to wrap
+//        so if letter index is 5
+//        if shift is 52
+//        index change will be 0
+//      return the letter at the changed index
+
+function caesarEncrypt(string, key) {
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  var result = '';
+  var chars = string.split('');
+
+  chars.forEach(function(char) {
+    result += shiftByKey(char);
+  });
+
+  return result;
+
+  function shiftByKey(char) {
+    var uppercase = char.match(/[A-Z]/);
+    if (char.match(/[^a-zA-Z]/)) {
+      return char;
+    } else {
+      var charIdx = alphabet.indexOf(char.toLowerCase());
+      var shiftBy = key % 26;
+      var newIdx = charIdx + shiftBy;
+      if (newIdx > 25) {
+        newIdx -= 26;
+      }
+      if (uppercase) {
+        return alphabet[newIdx].toUpperCase();
+      } else {
+        return alphabet[newIdx];
+      }
+    }
+  }
+}
+
+// Examples:
+
+// Simple shift
+console.log(caesarEncrypt('A', 0));       // 'A'
+console.log(caesarEncrypt('A', 3));       // 'D'
+
+// Wrap around
+console.log(caesarEncrypt('y', 5));       // 'd'
+console.log(caesarEncrypt('a', 47));      // 'v'
+
+// All letters
+console.log(caesarEncrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 25));
+// ZABCDEFGHIJKLMNOPQRSTUVWXY
+console.log(caesarEncrypt('The quick brown fox jumps over the lazy dog!', 5));
+// Ymj vznhp gwtbs ktc ozrux tajw ymj qfed itl!
+
+// Many non-letters
+console.log(caesarEncrypt('There are, as you can see, many punctuations. Right?; Wrong?', 2));
+// Vjgtg ctg, cu aqw ecp ugg, ocpa rwpevwcvkqpu. Tkijv?; Ytqpi?
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

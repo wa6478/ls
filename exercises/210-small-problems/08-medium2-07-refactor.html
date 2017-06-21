@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// 
+// Bubble Sort
+
+// Bubble Sort is one of the simplest sorting algorithms available. It isn't an efficient algorithm, but it's a great exercise for student developers. In this exercise, you will write a function that does a bubble sort of an Array.
+
+// A bubble sort works by making multiple passes (iterations) through the Array. On each pass, each pair of consecutive elements are compared. If the first of the two elements is greater than the second, then the two elements are swapped. This process is repeated until a complete pass is made without performing any swaps; at that point, the Array is completely sorted.
+
+// We can stop iterating the first time we make a pass through the array without making any swaps; at that point, the entire Array is sorted.
+
+// Write a function that takes an Array as an argument, and sorts that Array using the bubble sort algorithm as described. Note that sorting will be done "in-place"; that is, the solution will mutate the Array passed as an argument. You may assume that the Array contains at least 2 elements.
+
+// Examples
+
+//  input
+//    array
+//  output
+//    array
+//  reqs
+//    output array elements must be in ascending order
+//    must utilize multiple passes with a bubble sort
+//    must mutate array in place
+//  data struct
+//    array
+//  algo
+//    need a swapped flag
+//    if swapped flag is false at end of iteration, return array
+//    if array length is less than two, return array
+//    set a current element and an element before it
+//    compare the two
+//    if the prior element is greater than current element, swap
+//    use a holding element and use assignment to mutate array
+//    set swapped flag to true
+//    break condition is the that swapped flag is false &&
+//    current index === array.length
+//    need to reset the current index and flag if break condition is not reached
+
+// function bubbleSort(array) {
+//   var swapped = false;
+//   var current = 1;
+//   var last = 0;
+//   var temp;
+
+//   if (array.length < 2) {
+//     return array;
+//   }
+
+//   do {
+//     if (current === array.length) {
+//       current = 1;
+//       last = 0;
+//       swapped = false;
+//     }
+
+//     if (array[current] < array[last]) {
+//       temp = array[current];
+//       array[current] = array[last];
+//       array[last] = temp;
+//       swapped = true;
+//     }
+
+//     current += 1;
+//     last += 1;
+
+//   } while (current < array.length || swapped === true);
+
+//   return array;
+// }
+
+function bubbleSort(array) {
+  var swapped;
+
+  while (true) {
+    swapped = false;
+    
+    for (var i = 1; i < array.length; i++) {
+      if (array[i] > array[i - 1]) {
+        continue;
+      }
+
+      swap(array, i, i - 1);
+      swapped = true;
+    }
+
+    if (!swapped) {
+      break;
+    } 
+  }
+
+  return array;
+
+  function swap(array, idx1, idx2) {
+    var temp = array[idx1];
+    array[idx1] = array[idx2];
+    array[idx2] = temp;
+  }
+}
+
+var array = [5, 3];
+bubbleSort(array);
+console.log(array);     // [3, 5]
+
+array = [6, 2, 7, 1, 4]
+bubbleSort(array);
+console.log(array);     // [1, 2, 4, 6, 7]
+
+array = ['Sue', 'Pete', 'Alice', 'Tyler', 'Rachel', 'Kim', 'Bonnie'];
+bubbleSort(array);
+console.log(array);     // ['Alice', 'Bonnie', 'Kim', 'Pete', 'Rachel', 'Sue', 'Tyler']
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

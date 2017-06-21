@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// How Many
+
+// Write a function that counts the number of occurrences of each element in a given array. Once counted, log each element alongside the number of occurrences.
+
+function countOccurrences(array) {
+  var counts = {};
+  array.forEach(function(element) {
+    counts[element] = counts[element] ? counts[element] + 1 : 1;
+  });
+
+  for (element in counts) {
+    console.log(element + ' => ' + counts[element]);
+  }
+}
+
+// without for..in
+
+function countOccurrences(array) {
+  var counts = {};
+  array.forEach(function(element) {
+    counts[element] = counts[element] ? counts[element] + 1 : 1;
+  });
+
+  var elements = Object.keys(counts);
+
+  elements.forEach(function(element) {
+    console.log(element + ' => ' + counts[element]);
+  });
+}
+
+var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
+
+countOccurrences(vehicles);
+
+
+
+// console output
+// car => 4
+// truck => 3
+// SUV => 1
+// motorcycle => 2
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

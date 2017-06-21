@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Next Featured Number Higher than a Given Value
+
+// A featured number (something unique to this exercise) is an odd number that is a multiple of 7, and whose digits occur exactly once each. So, for example, 49 is a featured number, but 98 is not (it is not odd), 97 is not (it is not a multiple of 7), and 133 is not (the digit 3 appears twice).
+
+// Write a function that takes a single integer as an argument, and returns the next featured number that is greater than the argument. Issue an error message if there is no next featured number.
+
+//  input
+//    single integer
+//  output
+//    next featured number
+//    error if there is no next featured number
+//  reqs
+//    featured number criteria:
+//      odd number
+//      multiple of 7
+//      digits occur exactly once each
+
+//  data structure
+//    use loops and number / string primitives
+
+//  algo
+//    starting from one number higher than the parameter
+//    find the next multiple of 7
+//    check other feature criteria
+//    keep adding 7 from thereon out
+//    return true if it matches all criteria
+//    lets say the highest test case is the last feature number
+
+function featured(start) {
+  var firstNumToCheck = findNextMultipleOfSeven(start);
+  return findNextFeatured(firstNumToCheck);
+
+  function findNextFeatured(num) {
+    while (!isFeatureNum(num)) {
+      num += 7;
+      if (num > 1023456987) {
+        break;
+      }
+    }
+
+    if (num > 1023456987) {
+      return 'No feature number higher than argument';
+    }
+
+    return num;
+  }
+
+  function findNextMultipleOfSeven(num) {
+    num += 1;
+
+    while (num % 7 !== 0) {
+      num += 1;
+    }
+
+    return num;
+  }
+
+  function isFeatureNum(num) {
+    if (num % 2 === 0) {
+      return false;
+    } else if (duplicateDigits(num)) {
+      return false;
+    } else if (num % 7 !== 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function duplicateDigits(num) {
+    var numChars = String(num).split('');
+
+    for (var i = 0; i < numChars.length; i++) {
+      if (numChars.filter(function(numChar) { 
+        return numChars[i] === numChar 
+      }).length > 1) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+}
+
+// Examples:
+
+console.log(featured(12));        // 21
+console.log(featured(20));        // 21
+console.log(featured(21));        // 35
+console.log(featured(997));       // 1029
+console.log(featured(1029));      // 1043
+console.log(featured(999999));    // 1023547
+console.log(featured(999999987)); // 1023456987
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

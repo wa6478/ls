@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Cute Angles
+
+// Write a function that takes a floating point number that represents an angle between 0 and 360 degrees and returns a String that represents that angle in degrees, minutes, and seconds. You should use a degree symbol (˚) to represent degrees, a single quote (') to represent minutes, and a double quote (") to represent seconds. There are 60 minutes in a degree, and 60 seconds in a minute.
+
+// Examples:
+
+var MINUTES_PER_DEGREE = 60;
+var SECONDS_PER_DEGREE = 3600;
+
+function dms(floatAngle) {
+  var negative = floatAngle < 0 ? '-' : '';
+  var absFloatAngle = Math.abs(floatAngle);
+  var degrees = Math.floor(absFloatAngle);
+  var afterDegrees = absFloatAngle - degrees;
+  var minutes = Math.floor(afterDegrees * MINUTES_PER_DEGREE);
+  var minuteFloat = minutes / MINUTES_PER_DEGREE;
+  var afterMinutes = afterDegrees - minuteFloat;
+  var seconds = Math.floor(afterMinutes * SECONDS_PER_DEGREE);
+
+  function padNum(num) {
+    return ('0' + String(num)).slice(-2);
+  }
+
+  return negative + degrees + '˚' + padNum(minutes) + '\'' + padNum(seconds) + '"';
+}
+
+console.log(dms(30));        // 30°00'00"
+console.log(dms(-30));       // -30°00'00"
+console.log(dms(76.73));     // 76°43'48"
+console.log(dms(-76.73));     // -76°43'48"
+console.log(dms(254.6));     // 254°35'59"
+console.log(dms(93.034773)); // 93°02'05"
+console.log(dms(0));         // 0°00'00"
+console.log(dms(360));       // 360°00'00" or 0°00'00"
+
+// Note: your results may differ slightly depending on how you round values, but should generally be within a second or two of the results shown.
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

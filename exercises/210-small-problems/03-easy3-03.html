@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+
+// When Will I Retire
+
+// Build a program that logs when the user will retire and how many years the user has to work till retirement.
+
+// Example:
+
+// What is your age? 30
+// At what age would you like to retire? 70
+
+// It's 2016. You will retire in 2056.
+// You have only 40 years of work to go!
+
+var age = parseInt(prompt('What is your age?'), 10);
+var retirementAge = parseInt(prompt('What age would you like to retire?'), 10);
+var currentYear = new Date(Date.now()).getFullYear();
+var yearsUntilRetirement = retirementAge - age;
+var retirementYear = currentYear + yearsUntilRetirement;
+
+console.log('It\'s ' + currentYear + '. You will retire in ' + retirementYear + '.');
+console.log('You have only ' + yearsUntilRetirement + ' years of work to go!');
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

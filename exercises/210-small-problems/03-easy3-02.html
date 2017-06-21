@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // Searching 101
+
+  // Searching 101
+
+// Write a program that solicits 6 numbers from the user, then logs a message that describes whether or not the 6th number appears amongst the first 5 numbers.
+
+// Examples:
+
+// Enter the 1st number: 25
+// Enter the 2nd number: 15
+// Enter the 3rd number: 20
+// Enter the 4th number: 17
+// Enter the 5th number: 23
+// Enter the last number: 17
+
+// The number 17 appears in [25, 15, 20, 17, 23].
+// ---
+
+// Enter the 1st number: 25
+// Enter the 2nd number: 15
+// Enter the 3rd number: 20
+// Enter the 4th number: 17
+// Enter the 5th number: 23
+// Enter the last number: 18
+
+// The number 18 does not appear in [25, 15, 20, 17, 23].
+
+// input: prompt 6 times
+// side effect: log message on whether or not first five nums include last
+
+// use array to track inputs, can then use indexOf and slice to search the subarrays
+
+// algo:
+// initialize array
+// while loop that prompts for numbers until array length is 6
+    // stores each number given in the array
+    // no need to convert string input
+// create array consisting of first five numbers
+// create lastnum variable that is the last number given
+// create an output string 'The number last num' + appears + first five
+// create variable appears and set it to appears or does not appear
+// log the string
+
+function searchNumbers() {
+  var numbers = [];
+  var prompts = ['1st', '2nd', '3rd', '4th', '5th', 'last'];
+  var firstFive;
+  var lastNum;
+  var appears = 'appears';
+  var message;
+
+  for (var i = 0; i < prompts.length; i++) {
+    numbers.push(prompt('Enter the ' + prompts[i] + ' number:'));
+  }
+
+  firstFive = numbers.slice(0, 5);
+  lastNum = numbers[numbers.length - 1];
+
+  if (firstFive.indexOf(lastNum) < 0) {
+    appears = 'does not appear';
+  }
+
+  console.log('The number ' + lastNum + ' ' + appears + ' in ' + '[' + firstFive.join(', ') + ']');
+}
+
+searchNumbers();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

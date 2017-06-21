@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// 
+// Word to Digit
+
+// Write a function that takes a sentence string as input and returns a new string that contains the original string with any sequence of the words 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' converted to a string of digits.
+
+// Example:
+
+var NUMBERS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+// function wordToDigit(sentence) {
+//   return sentence.split(' ').map(function(word) {
+//     var textOnly = word.replace(/[^a-z]/g, '');
+//     var digit = NUMBERS.indexOf(textOnly);
+//     console.log(digit);
+//     if (digit > 0) {
+//       word = word.replace(textOnly, digit);
+//     }
+
+//     return word;
+//   }).join(' ');
+// }
+
+// function wordToDigit(sentence) {
+//   var re;
+
+//   NUMBERS.forEach(function(num) {
+//     re = new RegExp(num, 'g');
+//     sentence = sentence.replace(re, NUMBERS.indexOf(num));
+//   });
+
+//   return sentence;
+// }
+
+function wordToDigit(sentence) {
+  var re = new RegExp(NUMBERS.join('|'), 'gi');
+  return sentence.replace(re, function(match) {
+    return NUMBERS.indexOf(match);
+  });
+}
+
+console.log(wordToDigit('Please call me at five five five one two three four. Thanks.'));
+//'Please call me at 5 5 5 1 2 3 4. Thanks.'
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

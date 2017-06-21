@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Now I Know My ABCs
+
+// A collection of spelling blocks has two letters per block, as shown in this list:
+
+
+// This limits the words you can spell with the blocks to just those words that do not use both letters from any given block. You can also only use each block once.
+
+// Write a function that takes a word as a string, and returns true if it can spell the argument passed in from the set of blocks, false otherwise. You can consider the letters to be case insensitive when you apply the rules.
+
+// Examples:
+
+//  input
+//    string that is a word
+//  output
+//    boolean that represents whether or not the word can be spelled with the spelling blocks
+//  reqs
+//    cannot use both letters from one block
+//    once a block has been used, cannot use it again
+//    case insensitive when applying the rules
+
+//  data structure
+//    structure for the blocks
+//    array of arrays that have both letters
+//    array of strings 'bo'
+//    object where each property has a used / not used value
+
+//  algo
+//    initialize an array of blocks
+//    split my input into an array that i can iterate through and check against the blocks (use a for loop to return early)
+//    for every letter, iterate through blocks
+//    if it matches, set blocks equal to the filter out the block that was used
+//    if it doesn't match, return false
+//    if it makes it through the entire iteration return true
+
+// B:O   X:K   D:Q   C:P   N:A
+// G:T   R:E   F:S   J:W   H:U
+// V:I   L:Y   Z:M
+
+function isBlockWord(word) {
+  var blocks = {'bo': 0, 'gt': 0, 'vi': 0, 'xk': 0, 're': 0, 'ly': 0, 'dq': 0, 'fs': 0, 'zm': 0, 'cp': 0, 'jw': 0, 'na': 0, 'hu': 0,};
+
+  var chars = word.split('').map(makeLowerCase);
+  var keys = Object.keys(blocks);
+
+  for (var j = 0; j < keys.length; j++) {
+    for (var i = 0; i < chars.length; i++) {
+      if (keys[j].match(chars[i])) {
+        if (blocks[keys[j]] === 0) {
+          blocks[keys[j]] = 1;
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+
+  function makeLowerCase(string) {
+    return string.toLowerCase();
+  }
+
+  return true;
+}
+
+console.log(isBlockWord('BATCH')); // true
+console.log(isBlockWord('BUTCH')); // false
+console.log(isBlockWord('jest'));  // true
+console.log(isBlockWord('BoT')); // false
+console.log(isBlockWord('bAt')); // true
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Sum of Digits
+
+// Write a method that takes one argument, a positive integer, and returns the sum of its digits. Do this using list processing techniques.
+
+// Examples:
+
+// convert number to string
+// split on chars
+// map to numbers
+// reduce the array and return
+
+function sum(num) {
+  return String(num).split('').map(Number).reduce(function(sum, number) {
+      return sum + number;
+  });
+}
+
+console.log(sum(23));          // 5
+console.log(sum(496));         // 19
+console.log(sum(123456789));   // 45
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

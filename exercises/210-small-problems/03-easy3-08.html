@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+
+// Letter Swap
+
+// Given a string of words separated by spaces, write a function that swaps the first and last letters of every word.
+
+// You may assume that every word contains at least one letter, and that the string will always contain at least one word. You may also assume that each string contains nothing but words and spaces, and that there are no leading, trailing, or repeated spaces.
+
+// input: string
+// output: string
+// split string on spaces
+// map each element with letterswap
+// return joined array on spaces
+
+// letterswap
+// input: string consisting of one word
+// output: string with first and last letters of word swapped
+// guard clause: if string length < 2, return the string
+// guard clause: if string length === 2, return reversed string
+// set var firstLetter to string[0]
+// set var lastLetter to string.slice(-1);
+// create output string consisting of lastLetter, the middle of the string excluding the ends, and the firstLetter
+
+// function swap(string) {
+//   var words = string.split(' ');
+//   var swappedWords = words.map(function(element) {
+//     return letterswap(element);
+//   });
+
+//   return swappedWords;
+// }
+
+// function letterswap(word) {
+//   var firstLetter;
+//   var lastLetter;
+//   var middle;
+
+//   if (word.length < 2) {
+//     return word;
+//   }
+
+//   firstLetter = word[0];
+//   lastLetter = word.slice(-1);
+//   middle = word.slice(1, -1);
+
+//   return lastLetter + middle + firstLetter;
+// }
+
+// using regex and a nested function
+
+function swap(words) {
+  function swapFirstAndLast(word) {
+    return word.replace(/^(.)(.*)(.)$/, '$3$2$1');
+  }
+
+  return words.split(' ').map(function(word) { return swapFirstAndLast(word); } ).join(' ');
+}
+
+// Examples:
+
+console.log(swap('Oh what a wonderful day it is'));    // 'hO thaw a londerfuw yad ti si'
+
+// Oh what a wonderful
+// ['Oh', 'what', ...]
+// ['hO', 'thaw'
+
+console.log(swap('Abcde'));                            // 'ebcdA'
+console.log(swap('a'));                                // 'a'
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

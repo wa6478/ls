@@ -10,6 +10,14 @@
     // Example Output
 
     // Teddy is 69 years old!
+
+    function randomBetween(min, max) {
+      return Math.floor((max - min + 1) * Math.random() + min);
+    }
+
+    var age = randomBetween(20, 200);
+
+    console.log('Teddy is ' + age + ' years old!');
     </script>
   </head>
   <body>

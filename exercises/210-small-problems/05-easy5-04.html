@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+// Get The Middle Character
+
+// Write a function that takes a non-empty string argument, and returns the middle character or characters of the argument. If the argument has an odd length, you should return exactly one character. If the argument has an even length, you should return exactly two characters.
+
+// use length divided by 2 rounded down to get beginning index
+// if length is even, get substr starting with index for 2 chars
+// else just access by index
+
+function centerOf(string) {
+  var size = string.length;
+  var center = Math.floor(size / 2);
+
+  if (size % 2 === 1) {
+    return string[center];
+  } else {
+    return string.substr(center - 1, 2);
+  }
+}
+
+// Examples:
+
+console.log(centerOf('I love ruby'));    // 'e'
+console.log(centerOf('Launch School'));  // ' '
+console.log(centerOf('Launch'));         // 'un'
+console.log(centerOf('Launchschool'));   // 'hs'
+console.log(centerOf('x'));              // 'x'
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

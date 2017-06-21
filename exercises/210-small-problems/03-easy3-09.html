@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+
+// Letter Counter Part 1
+
+// Write a function that takes a string with one or more space separated words and returns an object that shows the number of words of different sizes.
+
+// Words consist of any string of characters that do not include a space.
+
+// input: string sentence
+// output: object with properties of word lengths
+// algo:
+// split the words
+// initialize an object 'lengthCounts'
+// iterate through words
+// use the length of the word as the property and += 1
+// if obj[length] is undefined, initialize
+// return the object
+
+function wordSizes(sentence) {
+  if (sentence.length < 1) {
+    return {};
+  }
+
+  var words = sentence.split(' ');
+  var wordCount = {};
+  var length;
+
+  words.forEach(function(word) {
+    length = String(word.length);
+    count = wordCount[length];
+    
+    wordCount[length] = count ? (count + 1) : 1; 
+  });
+
+  return wordCount;
+}
+
+// Examples
+
+console.log(wordSizes('Four score and seven.'));                       // { "3": 1, "4" : "1", "5": 1, "6": 1 }
+console.log(wordSizes('Hey diddle diddle, the cat and the fiddle!'));  // { "3": 5, "6": 1, "7": 2 }
+console.log(wordSizes('What\'s up doc?'));                             // { "6": 1, "2": 1, "4": 1 }
+console.log(wordSizes(''));                                            // {}
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

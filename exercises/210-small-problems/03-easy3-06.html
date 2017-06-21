@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+    // 
+
+// Palindromic Number
+
+// Write a function that returns true if its integer argument is palindromic, false otherwise. A palindromic number reads the same forwards and backwards.
+
+// convert number to string
+// compare string to its reversed version via arrays methods
+
+function isPalindromicNumber(number) {
+  var numStr = String(number);
+  return numStr === numStr.split('').reverse().join('');
+}
+
+// Examples:
+
+console.log(isPalindromicNumber(34543));        // true
+console.log(isPalindromicNumber(123210));       // false
+console.log(isPalindromicNumber(22));           // true
+console.log(isPalindromicNumber(5));            // true
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
