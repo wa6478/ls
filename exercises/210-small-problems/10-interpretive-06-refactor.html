@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Seeing Stars
+
+// Write a function that displays an 8-pointed star in an nxn grid, where n is an odd integer that is supplied as an argument to the function. The smallest such star you need to handle is a 7x7 grid or n is 7.
+
+// input:
+//   odd integer
+//   at least 7
+// output:
+//   side effect of logging rows that create the shape of a star that is
+//   as wide and tall as the input
+
+// algo:
+//   generate rows and log these to the console
+//   3 phases of row generation
+//   rows up to the mid point
+//     max width is out input
+//     // amount of total whitespace will be max width - 3
+//     row width starts at max width
+//     each successive row will be two chars smaller
+//     inner white space will be row width - 3 / 2
+//     outer white space will be max - row / 2
+//   the mid point
+//     number of stars equal to n
+//   rows after the mid point
+//     same as up to mid point but in reverse
+
+function star(maxWidth) {
+  if (maxWidth < 7) {
+    console.log('Minimum size is 7');
+    return undefined;
+  }
+
+  function rowBuilder(width) {
+    var outer = (maxWidth - width) / 2;
+    var inner = (width - 3) / 2;
+    return ' '.repeat(outer) + '*' + ' '.repeat(inner) + '*' + ' '.repeat(inner) + '*' + ' '.repeat(outer);
+  }
+
+  function rowPrinter(start, end) {
+    var width;
+
+    if (start > end) {
+      for (width = start; width >= end; width -= 2) {
+        console.log(rowBuilder(width));
+      }
+    } else {
+        for (width = start; width <= end; width += 2) {
+          console.log(rowBuilder(width));
+        }
+    }
+  }
+
+  rowPrinter(maxWidth, 3);
+  console.log('*'.repeat(maxWidth));
+  rowPrinter(3, maxWidth);
+}
+
+// Examples
+star(1);
+star(7)
+// logs
+// *  *  *
+//  * * *
+//   ***
+// *******
+//   ***
+//  * * *
+// *  *  *
+
+// *  *  *
+//  * * *
+//   ***
+// *******
+//   ***
+//  * * *
+// *  *  *
+
+
+star(9)
+// logs
+// *   *   *
+//  *  *  *
+//   * * *
+//    ***
+// *********
+//    ***
+//   * * *
+//  *  *  *
+// *   *   *
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

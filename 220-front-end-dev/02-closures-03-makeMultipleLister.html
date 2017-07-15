@@ -1,0 +1,15 @@
+<html>
+  <script>
+
+function makeMultipleLister(number) {
+  return function() {
+    var i = number;
+    while (i < 100) {
+      console.log(i);
+      i += number;
+    }
+  }
+}
+
+  </script>
+</html>

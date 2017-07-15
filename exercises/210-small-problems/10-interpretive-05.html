@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>210 - Small Problems</title>
+    <script>
+// Vigenere Cipher
+
+// The vigenere cipher encrypts alphabetic text by way of polyalphabetic substitution. It uses a series of caesar ciphers based on the letters of a keyword. Each letter of the keyword is treated as a shift value. For instance, the letter B corresponds to a shift value of 1 and the letter d a shift value 3. In essence, the shift value used for the letters of the alphabet is its index value. This means that the letter a-z would be equivalent to numbers 0-25; likewise A-Z would be 0-25.
+
+// Applying the vigenere cipher is done sequentially for each character by applying the current shift value to a caesar cipher for that particular character. To make this more concrete lets take the example of the following:
+
+// plaintext: Pineapples don't go on pizzas!
+// keyword: meat
+
+// Applying the vigenere cipher for each alphabetic character:
+// plaintext : Pine appl esdo ntgo onpi zzas
+// shift     : meat meat meat meat meat meat
+// ciphertext: Bmnx mtpe qwdh zxgh arpb ldal
+
+// result: Bmnxmtpeqw dhz'x gh ar pbldal!
+// Notice from the example that the key is not moved forward if the character is not in the alphabet. Like, the caesar cipher it only encrypts alphabet characters.
+
+// The objective for this exercise to implement the vigenere cipher. Take note that the case does not matter for the key (i.e 'MEat' === 'mEaT'), the resulting encryption won't change depending on the case of the letters.
+
+// input:
+//   plaintext - any sequence of chars
+//   keyword - case does not matter
+
+// output:
+//   ciphertext - a sequence of chars. number of chars equal to plaintext. "Encrypted" version of plaintext.
+
+// reqs:
+//   each character in the key represents a shift value
+//   the key is placed end over end up to the plaintext
+//   each letter in the repeated key line indicates the shift in the plaintext for that char
+//   doesn't change non alphabet chars
+//   characters will need to wrap around
+
+// algo:
+//   create an empty ciphertext output
+//   create a var to hold the current key index 
+//   iterate through chars of plaintext string
+//   call encode helper on each letter and append to output
+//     also passing the current letter's key
+//   return output
+
+//   encode
+//   input: a single string char, key
+//   output: a single char based on the vigenere encoding method
+//   have access to a (a-z) array which we can use to lookup the index of key
+//   once resolving key value and the value of the char, add them together for the new index value
+//   if the value is greater than 25, subtract 26
+//   lookup the corresponding character and return it
+
+
+var ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+console.log();
+
+function vigenereCipher(plaintext, key) {
+  var output = '';
+  var keyIdx = 0;
+  var chars = plaintext.split('');
+  key = key.toLowerCase();
+
+  chars.forEach(function(char) {
+    if (char.match(/[a-z]/i)) {
+      output += encode(char, key[keyIdx]);
+      keyIdx = nextKey(keyIdx);
+    } else {
+      output += char;
+    }
+  });
+
+  function nextKey(keyIdx) {
+    var next = keyIdx + 1;
+    if (next === key.length) {
+      return 0;
+    } else {
+      return next;
+    }
+  }
+
+  function encode(char, keyChar) {
+    var uppercase = !!char.match(/[A-Z]/);
+    char = char.toLowerCase();
+    var charValue = ALPHABET.indexOf(char);
+    var keyValue = ALPHABET.indexOf(keyChar);
+    var encodedValue = charValue + keyValue;
+    var encodedChar = '';
+
+    if (encodedValue > 25) {
+      encodedValue -= 26;
+    }
+
+    encodedChar = ALPHABET[encodedValue];
+
+    if (uppercase) {
+      return encodedChar.toUpperCase();
+    } else {
+      return encodedChar;
+    }
+  }
+
+  return output;
+}
+
+
+// tests:
+
+console.log(vigenereCipher('hello my friend', 'Abc'));
+// hellomyfriend // plaintext
+// hfnlpoygtifpd // ciphertext
+// AbcAbcAbcAbcA // key
+// 0120120120120 // number to shift by
+console.log(vigenereCipher('Dog', 'Rab')); // Uoh
+console.log(vigenereCipher('Pineapples don\'t go on pizzas!', 'cab'));
+// Riogaqrlfu dpp't hq oo riabat!
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

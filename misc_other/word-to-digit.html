@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A General Problem Solving Approach</title>
+    <script>
+// Word to Digit
+
+// Write a function that takes a sentence string as input and returns a new string that contains the original string with any sequence of the words 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' converted to a string of digits.
+
+// Example:
+
+// in:
+//    string - sentence with numbers written as words
+// output:
+//    string - with any written out numbers replaced with corresponding numbers
+// reqs:
+//    retain all original punctuation and capitalization
+//    only replace numbers with their corresponding digits
+
+// data structure
+//   can use an array to hold the number words, with index representing the digit
+//   can set up an object to hold my number words and the digit they correspond to
+//   object seems a little bit more straight forward in that its a little easier to think about the lookup
+
+// algo
+//   create result string
+//   split sentence into an array on word boundaries
+//   iterate through the lower case versions of each word
+//     within each iteration iterate through the keys of number words
+//     if it matches a number word, append its digit to result
+//     if it doesn't, append the word (not lowercase version) to the result array.
+//   return the result string
+
+var DIGITS = {
+  zero: 0,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+}
+
+function wordToDigit(sentence) {
+  if (!sentence) {
+    return '';
+  }
+
+  var result = '';
+  var words = sentence.split(/\b/);
+  var numbers = Object.keys(DIGITS);
+
+  words.forEach(function(word) {
+    var lowercase = word.toLowerCase()
+    var found = false;
+    for (digit in DIGITS) {
+      if (digit === lowercase) {
+        found = true;
+        break;
+      }
+    }
+
+    if (found) {
+      result += DIGITS[digit];
+    } else {
+      result += word;
+    }
+
+    found = false;
+  });
+
+  return result;
+}
+
+console.log(wordToDigit('Please call me at five five five one two three four. Thanks.'));
+//'Please call me at 5 5 5 1 2 3 4. Thanks.'
+console.log(wordToDigit('one')) // '1'
+console.log(wordToDigit('onetwo')) // 'onetwo'
+console.log(wordToDigit('one two')) // '1 2'
+console.log(wordToDigit('')) // ''
+console.log(wordToDigit('oNe')) // '1'
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

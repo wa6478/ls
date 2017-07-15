@@ -1,0 +1,30 @@
+<html>
+  <script>
+
+function makeList() {
+  var list = [];
+  return function(item) {
+    var itemIdx = list.indexOf(item);
+
+    if (arguments.length === 0) {
+      if (list.length === 0) {
+        console.log('List is Empty.')
+      } else {
+        list.forEach(function(element) {
+          console.log(element);
+        });
+      }
+    } else {
+      if (itemIdx >= 0) {
+        console.log(item + ' removed!');
+        list.splice(itemIdx, 1);
+      } else {
+        console.log(item + ' added!');
+        list.push(item);
+      }
+    }
+  }
+}
+
+  </script>
+</html>

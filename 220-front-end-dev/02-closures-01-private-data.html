@@ -1,0 +1,20 @@
+<html>
+  <script>
+
+function makeCounterLogger(start) {
+  return function(end) {
+    if (start > end) {
+      for (var i = start; i >= end; i--) {
+        console.log(i);
+      }
+    } else {
+      for (var i = start; i <= end; i++) {
+        console.log(i);
+      }
+    }
+  }
+}
+
+
+  </script>
+</html>

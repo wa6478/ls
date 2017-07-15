@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>219</title>
+    <script>
+
+// A garland word is one that starts and ends with the same N letters in the same order, for some N greater than 0, but less than the length of the word. I'll call the maximum N for which this works the garland word's degree. For instance, "onion" is a garland word of degree 2, because its first 2 letters "on" are the same as its last 2 letters.
+
+// Write a function that takes one argument of a word, and return its garland word degree.
+
+// garland word start and ends with the same N letters in the same order
+// N greater than 0
+// N less than the length of the word
+// given a maximum N
+//
+
+// in:
+//    string which represents a word
+// out:
+//    integer which represents the garland word degree
+// reqs:
+//    garland word has N letters that are the same at the beginning and end
+//    N > 0
+//    to be a garland word minimum length has to be 2
+//    grab as many N letters from the beginning of the word and end of the word that are the same
+//    N < length of the word
+//    case insensitive
+//    word can consist of any string of characters
+
+// data structure:
+//    array perhaps not necessary here
+//    string primitive types
+
+// algo:
+//    create a begin and end variable
+//    set word equal to lowercase
+//    iterate from word.length - 1, subtract at each iteration
+//    beginning slice start at 0 through iterator
+//    end slice will start at -iterator
+//    check if beginning equals end
+//      if true return beginning string length
+//    after loop if it doesn't return true
+//    return 0
+
+function garlandDegree(word) {
+  var begin;
+  var end;
+  var word = word.toLowerCase();
+
+  for (var i = word.length - 1; i > 0; i--) {
+    beg = word.slice(0, i);
+    end = word.slice(-i);
+    if (beg === end) {
+      return beg.length;
+    }  
+  }
+
+  return 0;
+}
+
+console.log(garlandDegree('onion')); // 2 beg = onio, end = nion
+console.log(garlandDegree('abc')); // 0
+console.log(garlandDegree('abca')); // 1
+console.log(garlandDegree('abcab')); // 2
+console.log(garlandDegree('abcabc')); // 3
+console.log(garlandDegree('a')); // 0
+console.log(garlandDegree('aa')); // 1
+console.log(garlandDegree('Aa')); // 1
+console.log(garlandDegree('aBcAbc')); // 3
+console.log(garlandDegree('aaaa')); // 3
+console.log(garlandDegree('aa*aa')); // 2
+console.log(garlandDegree('1a*a21')); // 1
+console.log(garlandDegree('')); // 0
+
+
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
