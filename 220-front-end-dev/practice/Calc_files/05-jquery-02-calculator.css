@@ -1,0 +1,27 @@
+body {
+  background: #555;
+  color: #000;
+  padding: 50px;
+}
+
+main {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+form, fieldset {
+  border: none;
+}
+
+input {
+  height: 20px;
+  font-size: 16px;
+}
+
+#output {
+  color: green;
+  font-size: 50px;
+  box-sizing: border-box;
+  margin: 0;
+}

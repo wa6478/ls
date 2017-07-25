@@ -12,7 +12,8 @@ function baz(func) {
 baz(foo); // returns function `foo`
 
 // To be used this way, the context of these functions is defined at function invocation (when it is executed), not when it is defined.
-// The context of a function is the object that `this` references. <???>
+// The context of a function is the object that `this` references.
+// As such, context refers to the object that is the receiver of the function invocation.
 
 var obj = {
   a: function () { // function that is assigned to a property of an object is called a method
@@ -30,6 +31,7 @@ green(); // logs "I'm undefined" because when the function is invoked without an
 // `this` now references the global object which does not have a `b` property (i.e. `window.b` returns `undefined`)
 
 // This stands in contrast to a function's variable scope, which is based on where the code is defined (lexical scoping rules).
+// Variable scope is also unique to each function invocation, allowing for the utilization of "private" data. 
 
 // Functions without an explicit receiver have an implicit execution context.
 // In JavaScript, the implict execution context is always the context of the global object (i.e. global context).
@@ -100,3 +102,6 @@ window.baz; // "world"
 
 // This is why a new variable is created in a function scope without a function declaration becomes a property of the global object.
 
+// =====
+
+// Variables inside closures are only available from within the closure, never outside of it

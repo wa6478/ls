@@ -1,0 +1,19 @@
+body {
+  background: #000;
+  color: #fff;
+}
+
+a {
+  color: red;
+}
+
+main {
+  width: 300px;
+  margin: 0 auto;
+  background: #666;
+}
+
+#accordion {
+  background: #888;
+  padding: 5px;
+}

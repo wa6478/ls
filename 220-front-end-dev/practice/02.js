@@ -1,0 +1,11 @@
+var total = 0;
+
+function add(number) {
+  total += number;
+  console.log(total);
+}
+
+function subtract(number) {
+  total -= number;
+  console.log(total);
+}
