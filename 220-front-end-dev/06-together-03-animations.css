@@ -1,0 +1,69 @@
+body {
+  font: normal 14px Helvetica, Arial, sans-serif;
+  color: #000;
+  background: #780E24;
+  padding: 5px;
+}
+
+main {
+  background: #fff;
+  padding: 15px;
+  width: 802px;
+}
+
+/* fieldset reset */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* form formatting */
+label, label > div {
+  display: block;
+}
+
+label > div {
+  padding-bottom: 15px;
+}
+
+fieldset > div {
+  padding: 0 0 15px 40px;
+}
+
+input[type="number"] {
+  height: 30px;
+  width: 70px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* canvas */
+#canvas {
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(to bottom, #fff 0%, #06c 100%);
+  margin: 0 0 15px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#canvas > div {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background: #dde338;
+}
+
+#canvas > div.circle {
+  border-radius: 100%;
+}
+
+#canvas > div.star {
+  background: transparent url("06-together-03-animations-star.png");
+  background-size: 100%;
+}

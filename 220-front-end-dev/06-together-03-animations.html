@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Animations</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="06-together-03-animations.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="06-together-03-animations.js"></script>
+  </head>
+  <body>
+    <main>
+      <div id="canvas"></div>
+      <p>
+        <a href="#" id="start">Start</a> | <a href="#" id="stop">Stop</a>
+      </p>
+      <h1>Add a shape</h1>
+      <h2>Type</h2>
+      <form action="" method="post">
+        <fieldset>
+          <div>
+            <label>
+              <input type="radio" value="square" name="type" />
+              Square
+            </label>
+            <label>
+              <input type="radio" value="circle" name="type" />
+              Circle
+            </label>
+            <label>
+              <input type="radio" value="star" name="type" />
+              Star
+            </label>
+          </div>
+          <label>
+            Starting Point
+            <div>
+              <input type="number" placeholder="x:" name="start_x" />
+              <input type="number" placeholder="y:" name="start_y" />
+            </div>
+          </label>
+          <label>
+            Ending Point
+            <div>
+              <input type="number" placeholder="x:" name="end_x" />
+              <input type="number" placeholder="y:" name="end_y" />
+            </div>
+          </label>
+          <label>
+            Duration (ms)
+            <input type="number" name="duration" value="1000" />
+          </label>
+          <input type="submit" value="Add" />
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
