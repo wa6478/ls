@@ -2,6 +2,7 @@ var $message = $("#message");
 var $letters = $("#spaces");
 var $guesses = $("#guesses");
 var $apples = $("#apples");
+var $replay = $("#replay");
 
 // A function that picks a random word from an array of words. The function has to pick a different word every time it runs, and when it's out of words, it returns undefined
 // How to start a new game. We'll need a Game constructor that can be used to create game objects.
@@ -83,10 +84,6 @@ Game.prototype = {
     $apples.removeClass();
     new Game();
   },
-  displayNewGame: function() {
-    $message.append('<a href="#">Play again</a>');
-    $("#message a").on("click", this.startNewGame.bind(this));
-  },
   duplicateGuess(letter) {
     return this.lettersGuessed.indexOf(letter) >= 0;
   },
@@ -145,12 +142,12 @@ Game.prototype = {
     if (this.checkWin()) {
       this.unbind();
       this.displayMessage("You win!");
-      this.displayNewGame();
+      this.showReplay();
       this.changeBackground("win");
     } else if (this.checkLose()) {
       this.unbind();
       this.displayMessage("You lose!");
-      this.displayNewGame();
+      this.showReplay();
       this.changeBackground("lose");
     }
   },
@@ -163,14 +160,19 @@ Game.prototype = {
   bind: function() {
     $(document).on("keypress.game", this.processGuess.bind(this));
   },
+  hideReplay: function() {
+    $replay.hide();
+  },
+  showReplay: function() {
+    $replay.show();
+  },
   init: function() {
-    this.unbind();
     this.bind();
     this.changeBackground("");
     this.emptyGuesses();
     this.createBlanks();
     this.removeMessage();
-
+    this.hideReplay();
   }
 };
 
@@ -183,3 +185,8 @@ function notALetter(letter) {
 }
 
 new Game();
+
+$replay.on("click", function(e) {
+  e.preventDefault();
+  new Game();
+});
