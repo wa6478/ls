@@ -57,6 +57,8 @@ function Game() {
 
   if(!this.word) {
     this.displayMessage("Sorry, I've run out of words!");
+    this.hideReplay();
+    return this;
   }
 
   this.word = this.word.split("");

@@ -78,10 +78,6 @@ p:empty {
   display: none;
 }
 
-p a {
-  display: block;
-}
-
 span {
   display: inline-block;
   width: 30px;
