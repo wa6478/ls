@@ -62,5 +62,5 @@ Still to do:
   - search query - ok
   - form validation - ok
   - animations - ok
-  - handlebars - 
-  - media queries
+  - handlebars - ok
+  - media queries - ok
