@@ -178,11 +178,9 @@ section#update_contact form {
 }
 
 section#update_contact dl {
-  width: 660px;
   box-sizing: border-box;
   padding-bottom: 20px;
   text-align: left;
-  margin: 0 auto;
 }
 
 
@@ -198,13 +196,8 @@ section#update_contact dt {
 }
 
 section#update_contact dd {
-  width: 500px;
+  width: 60%;
 }
-
-section#update_contact dd.error {
-  margin-left: 150px;
-}
-
 
 section#update_contact dd input {
   width: 45%;
@@ -259,7 +252,6 @@ footer {
   }
 
   .contact,
-  section#update_contact dl,
   section#update_contact dd,
   section#update_contact dt {
     width: 100%;
@@ -271,7 +263,6 @@ footer {
   }
 
   .contact,
-  section#update_contact dd.error,
   dd,
   dt,
   .button,

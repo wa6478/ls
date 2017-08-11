@@ -10,7 +10,7 @@
   <body>
     <header>
       <h1>Contact Manager</h1>
-      <h2>Using Localstorage, Handlebars, and jQuery</h2>
+      <h2>Using Localstorage, Handlebar, and jQuery</h2>
     </header>
     <main>
       <section id="home">
@@ -30,6 +30,8 @@
                   <dd>{{phone}}</dd>
                   <dt>Email:</dt>
                   <dd>{{email}}</dd>
+                  <dt>Notes:</dt>
+                  <dd>{{notes}}</dd>
                 </dl>
                 <a href="#" class="button edit">Edit</a>
                 <a href="#" class="button delete">Delete</a>
@@ -51,27 +53,35 @@
         <form method="post">
           <fieldset>
             <dl>
-              <dt><label for="name">Full name:</label></dt><!--
-              --><dd><input type="text" id="name" name="name" /></dd>
-              <!-- <dt class="name_error error"></dt> -->
+              <dt><label for="name">Full name:</label></dt>
+              <dd><input type="text" id="name" name="name" /></dd>
+              <dt class="name_error error"></dt>
               <dd class="name_error error">
                 <p>Please enter a name</p>
               </dd>
             </dl>
             <dl>
-              <dt><label for="email">Email address:</label></dt><!--
-              --><dd><input type="email" id="email" name="email" /></dd>
-              <!-- <dt class="email_error error"></dt> -->
+              <dt><label for="email">Email address:</label></dt>
+              <dd><input type="email" id="email" name="email" /></dd>
+              <dt class="email_error error"></dt>
               <dd class="email_error error">
                 <p>Please enter a valid email address</p>
               </dd>
             </dl>
             <dl>
-              <dt><label for="phone">Telephone number:</label></dt><!--
-              --><dd><input type="text" id="phone" name="phone" /></dd>
-              <!-- <dt class="phone_error error"></dt> -->
+              <dt><label for="phone">Telephone number:</label></dt>
+              <dd><input type="text" id="phone" name="phone" /></dd>
+              <dt class="phone_error error"></dt>
               <dd class="phone_error error">
                 <p>Please enter a phone number</p>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="notes">Notes:</label></dt>
+              <dd><input type="text" id="notes" name="notes" /></dd>
+              <dt class="notes_error error"></dt>
+              <dd class="notes_error error">
+                <p>Please enter a note</p>
               </dd>
             </dl>
             <dl>
