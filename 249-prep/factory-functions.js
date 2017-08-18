@@ -50,5 +50,3 @@ function makeObj() {
 }
 
 
-// Constructor Functions
-

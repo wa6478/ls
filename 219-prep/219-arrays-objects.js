@@ -86,7 +86,7 @@
 // return value: a new array consisting of the return value of the callback function for each element in the original array
 
 // reduce
-// syntax: arr.map(callback(accumulator, currentValue, idx, array), initialValue);
+// syntax: arr.reduce(callback(accumulator, currentValue, idx, array), initialValue);
 // side effects: none
 // return value: accumulator
 // callback should return what to do with the sum, whether to add to it, or assign it to a certain value
